@@ -24,7 +24,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Header />
       <Navbar />
       <div className="AdminContainer">
         {adminData.map((item, index) => (

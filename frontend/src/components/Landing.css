@@ -1,8 +1,21 @@
-.land-container {
-  /* background-color: antiquewhite; */
-
+#top{
+  text-align: center;
+  background-color: #00000050;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 1000;
+  backdrop-filter: blur(10px);
 }
-
+#top button{
+  background-color: #ffffff8f;
+  color: #000000;
+  border: none;
+  font-size: 20px;
+  font-weight: 1000;
+  padding: 10px;
+  margin: 10px;
+}
 .landing {
   background-color: black;
   padding: 1px;
