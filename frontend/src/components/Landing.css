@@ -1,0 +1,61 @@
+.land-container {
+  /* background-color: antiquewhite; */
+
+}
+
+.landing {
+  background-color: black;
+  padding: 1px;
+}
+
+.landing h1 {
+  background-image: url("https://img.freepik.com/free-photo/bird-colorful-colorful-flowers-generative-ai_206725-752.jpg?size=626&ext=jpg");
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 6rem;
+}
+
+.banner {
+  height: 150vh;
+  background-image: url("../Assests/top.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.portal {
+  display: flex;
+  float: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("../Assests/bottom.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.portal button {
+  height: fit-content;
+  background-color: transparent;
+  border: none;
+  margin: 20px;
+  padding-bottom: 0;
+  width: fit-content;
+  aspect-ratio: 1/1;
+}
+
+.portal button img {
+  width: 80%;
+  filter: drop-shadow(0 0 0.75rem #000000);
+}
+
+@media screen and (max-width: 992px) {
+  .landing h1 {
+    font-size: 2.5rem;
+    font-weight: 1000;
+  }
+}

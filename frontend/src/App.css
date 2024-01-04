@@ -1,0 +1,12 @@
+button {
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+}
+body::-webkit-scrollbar{
+  background-color: black;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #2a2929;
+}

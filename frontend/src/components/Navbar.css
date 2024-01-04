@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.menu {
+  list-style-type: none;
+  margin: 1px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #977af6;
+  display: flex;
+}
+
+.menu li {
+  text-align: center;
+  flex: 1;
+}
+
+.menu li a {
+  display: block;
+  color: #fff;
+  padding: 14px 0;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.menu li a:hover {
+  color:black;
+  background-color: #b58ffd;
+}

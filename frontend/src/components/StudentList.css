@@ -1,0 +1,89 @@
+/* StudentList.css */
+
+/* Color Variables */
+:root {
+  --primary-bg-color: #e46d4a; /* Terracotta */
+  --secondary-bg-color: #2c3e50; /* Gun Powder */
+  --header-color: #c3d7df; /* Moon Raker */
+  --button-bg-color: #2ecc71; /* Acapulco */
+  --button-text-color: #fff;
+}
+
+.student-list-container {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+}
+
+.student-list-header {
+  color: var(--header-color);
+  font-size: 24px;
+  padding: 20px 0;
+  background-color: var(--primary-bg-color);
+  color: var(--button-text-color);
+}
+
+.student-list-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#student-table th, #student-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+#student-table th {
+  background-color: var(--primary-bg-color);
+  color: var(--button-text-color);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--table-bg-odd);
+}
+
+.student-form {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-form input[type="text"],
+.student-form input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #555;
+}
+
+.delete-button {
+  padding: 10px 20px;
+  background-color: #ff3333; /* Maintain the specified delete button color */
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #ff0000; /* Maintain the specified hover color */
+}
