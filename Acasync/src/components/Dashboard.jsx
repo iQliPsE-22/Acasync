@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
-import Header from "./Header";
 import { imagefrombuffer } from "imagefrombuffer";
 import Navbar from "./Navbar";
 
