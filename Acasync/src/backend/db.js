@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 async function connectToDatabase() {
-  await mongoose.connect("mongodb+srv://iqlipse22:Uprvmz9ikr@cluster0.xkqjppx.mongodb.net/?retryWrites=true&w=majority", {
+  await mongoose.connect("mongodb+srv://iqlipse22:Uprvmz9ikr@cluster0.xkqjppx.mongodb.net/?retryWrites=true&w=majority/admin", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
