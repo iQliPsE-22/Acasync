@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Admin from "./components/Admin";
@@ -8,12 +9,12 @@ import Dashboard from "./components/Dashboard";
 import StudentList from "./components/StudentList";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
-import Header from './components/Header';
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-    <Header/>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />

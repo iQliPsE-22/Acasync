@@ -2,10 +2,14 @@
 
 /* Color Variables */
 :root {
-  --primary-bg-color: #977af6; /* Terracotta */
-  --secondary-bg-color: #2c3e50; /* Gun Powder */
-  --header-color: #c3d7df; /* Moon Raker */
-  --button-bg-color: #2ecc71; /* Acapulco */
+  --primary-bg-color: #977af6;
+  /* Terracotta */
+  --secondary-bg-color: #2c3e50;
+  /* Gun Powder */
+  --header-color: #c3d7df;
+  /* Moon Raker */
+  --button-bg-color: #2ecc71;
+  /* Acapulco */
   --button-text-color: #fff;
 }
 
@@ -32,7 +36,8 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-#student-table th, #student-table td {
+#student-table th,
+#student-table td {
   border: 1px solid #ddd;
   padding: 12px;
 }
@@ -76,7 +81,8 @@ tbody tr:nth-child(odd) {
 
 .delete-button {
   padding: 10px 20px;
-  background-color: #ff3333; /* Maintain the specified delete button color */
+  background-color: #ff3333;
+  /* Maintain the specified delete button color */
   color: var(--button-text-color);
   border: none;
   border-radius: 5px;
@@ -85,5 +91,6 @@ tbody tr:nth-child(odd) {
 }
 
 .delete-button:hover {
-  background-color: #ff0000; /* Maintain the specified hover color */
+  background-color: #ff0000;
+  /* Maintain the specified hover color */
 }
