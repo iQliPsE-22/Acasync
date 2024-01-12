@@ -40,10 +40,8 @@ const Dashboard = () => {
               </div>
             )}
             <div className="AdminInfo">
-              <span style={{ textAlign: "center" }}>
-                <h3>Admin</h3>
-              </span>
-              <p>{`${item.firstName} ${item.lastName}`}</p>
+              <span style={{ textAlign: "center" }}></span>
+              <h3>{`${item.firstName} ${item.lastName}`}</h3>
               <p>{`${item.email}`}</p>
               <p>{`+91${item.phone}`}</p>
             </div>
