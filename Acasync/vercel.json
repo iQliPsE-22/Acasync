@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "builds": [
-      {
-        "src": "/Acasync/src/backend/index.js",
-        "use": "@now/node"
-      }
-    ]
-  }
