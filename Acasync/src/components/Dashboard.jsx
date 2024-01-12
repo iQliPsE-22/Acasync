@@ -2,14 +2,26 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
 import Navbar from "./Navbar";
+import LineChart from "./LineChart";
 
 const Dashboard = () => {
   const [adminData, setAdminData] = useState([]);
+  const [list, setList] = useState([]);
 
   useEffect(() => {
+    fetchList();
     fetchAdminData();
-    console.log(adminData);
-  }, [adminData]);
+  }, []);
+
+  const fetchList = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/list");
+      const data = await response.json();
+      setList(data);
+    } catch (error) {
+      console.error("Error fetching list data:", error);
+    }
+  };
 
   const fetchAdminData = async () => {
     try {
@@ -21,9 +33,25 @@ const Dashboard = () => {
     }
   };
 
+  const userData = {
+    labels: list.map((data) => data.name),
+    datasets: [
+      {
+        label: "Marks",
+        data: list.map(
+          (data) => (parseInt(data.marks1) + parseInt(data.marks2)) / 2
+        ),
+        backgroundColor: "white",
+        borderColor: "#977af6",
+        borderWidth: 2,
+      },
+    ],
+  };
+
   return (
-    <div className="dashboard">
+    <>
       <Navbar />
+    <div className="dashboard">
       <div className="AdminContainer">
         {adminData.map((item, index) => (
           <div className="AdminCard" key={index}>
@@ -47,8 +75,10 @@ const Dashboard = () => {
             </div>
           </div>
         ))}
+      <LineChart chartData={userData} />
       </div>
     </div>
+    </>
   );
 };
 
