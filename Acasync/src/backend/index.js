@@ -8,7 +8,6 @@ const connectToDatabase = require("./db"); // Adjust the path as needed
 connectToDatabase();
 
 const server = express();
-// Add the CORS middleware before defining routes
 server.use(cors());
 server.use(bodyParser.json());
 
@@ -44,17 +43,15 @@ server.post("/admin", upload.single("profilePicture"), async (req, res) => {
 // CRUD - Create List
 server.post("/list", async (req, res) => {
   try {
-    console.log(req.body);
     const { enrollmentId, name, marks1, marks2 } = req.body;
+    const list = new List();
+    list.enrollmentId = enrollmentId;
+    list.name = name;
+    list.marks1 = marks1;
+    list.marks2 = marks2;
 
-    const list = new List({
-      enrollmentId,
-      name,
-      marks1,
-      marks2,
-    });
-
-    await list.save();
+    const ans = await list.save();
+    console.log(ans);
     res.status(201).json({ message: "List item created successfully" });
   } catch (error) {
     res.status(500).json({ error: "Error creating list item" });
@@ -82,7 +79,22 @@ server.post("/student", async (req, res) => {
   }
 });
 
-// Fetch data from the database
+server.post("/list", async (req, res) => {
+  try {
+    const { enrollmentId, name, marks1, marks2 } = req.body;
+    const list = new List({
+      enrollmentId,
+      name,
+      marks1,
+      marks2,
+    });
+    await list.save();
+    res.status(201).json({ message: "List item created successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Error creating list item" });
+  }
+});
+
 server.get("/admin", async (req, res) => {
   const docs = await Admin.find();
   res.json(docs);

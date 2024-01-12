@@ -27,7 +27,7 @@ const StudentSchema = new mongoose.Schema({
 });
 
 const ListSchema = new mongoose.Schema({
-  enrollmentId: String,
+  id: String,
   name: String,
   marks1: String,
   marks2: String,

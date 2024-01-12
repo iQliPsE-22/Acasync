@@ -4,19 +4,23 @@
   width: 100%;
   overflow-x: hidden;
 }
+
 #pic {
   margin-right: auto;
 }
+
 img#pic {
-  width: 100%;
-  border-radius: 0.5rem;
+  width: 30%;
+  border-radius: 50%;
   transition: 0.5s;
 }
+
 .AdminContainer {
   display: flex;
   font-family: var(--chakra-fonts-body);
   text-align: left;
-  background-color: #f9f9f9;
+  background-color: #121212;
+  color: white;
   width: 100%;
   height: fit-content;
   margin: auto;
@@ -26,28 +30,32 @@ img#pic {
   padding: 25px;
   transition: 1s;
 }
-.AdminContainer:hover {
+
+.AdminContainer p {
+  color: #797979;
+}
+
+.AdminContainer p:hover {
+  color: white;
   transition: 1s;
 }
+
 .AdminCard {
   height: 100%;
   width: 300px;
-  background-color: #adfdfb;
+  background-color: rgb(32, 32, 32);
   padding: 30px;
   border-radius: 10px;
 }
+
 .Admininfo {
   color: red;
   font-size: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-align: center;
-  justify-items: baseline;
   transition: 0.5s;
 }
-.Admininfo:hover {
-  color: rgb(35, 35, 100);
-}
+
 li {
   text-decoration: none;
 }
