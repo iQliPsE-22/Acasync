@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Oxygen&display=swap');
+
 .dashboard {
   background: #c5c5c5;
   overflow-x: hidden;
+  height: 100vh;
+  font-family: 'Julius Sans One', 'Oxygen', sans-serif;
+}
+
+.hero-class {
+  background-color: #121212;
+  border-radius: 10px;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 1rem;
 }
 
 #pic {
@@ -13,19 +30,23 @@ img#pic {
   transition: 0.5s;
 }
 
+.hero {
+  width: min-content;
+  margin-left: 25px;
+}
+
 .AdminContainer {
+  width: 30vw;
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: var(--chakra-fonts-body);
-  text-align: left;
   background-color: #121212;
   color: white;
-  width: 100%;
-  height: fit-content;
-  margin-top: 1rem;
-  border-radius: 10px;
-  max-height: 600px;
-  padding: 25px;
   transition: 1s;
+  background-color: rgb(59, 59, 59);
 }
 
 .AdminContainer p {
@@ -38,23 +59,27 @@ img#pic {
 }
 
 .AdminCard {
-  height: 100%;
-  width: 300px;
-  background-color: rgb(32, 32, 32);
-  padding: 30px;
+  width: 90%;
+  background-color: #202020;
+  padding: 20px;
   border-radius: 10px;
-  margin-right: 50px;
-
+  margin-bottom: 10px;
 }
 
-.Admininfo {
-  color: red;
-  font-size: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  transition: 0.5s;
+.Schedule {
+  color: white;
+  background-color: rgb(32, 32, 32);
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+  border-radius: 10px;
 }
 
-li {
-  text-decoration: none;
+.Schedule table {
+  width: 90%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

@@ -18,6 +18,7 @@
   text-align: center;
   background-color: var(--secondary-bg-color);
   padding: 20px;
+  min-height: 100vh;
 }
 
 .student-list-header {
@@ -54,7 +55,7 @@ tbody tr:nth-child(odd) {
 .student-form {
   margin: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -81,7 +82,7 @@ tbody tr:nth-child(odd) {
 
 .delete-button {
   padding: 10px 20px;
-  background-color: #ff3333;
+  background-color: gray;
   /* Maintain the specified delete button color */
   color: var(--button-text-color);
   border: none;

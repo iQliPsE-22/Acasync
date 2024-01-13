@@ -1,0 +1,11 @@
+.line {
+    background-color: rgb(50, 50, 50);
+    height: 50vh;
+    width: 50vw;
+    border-radius: 10px;
+}
+
+.line canvas {
+    height: 100%;
+    width: 100%;
+}

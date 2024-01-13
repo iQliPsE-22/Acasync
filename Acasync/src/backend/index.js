@@ -21,8 +21,8 @@ server.post("/admin", upload.single("profilePicture"), async (req, res) => {
 
     const admin = new Admin({
       profilePicture: {
-        data: req.file.buffer, // Store the binary image data
-        contentType: req.file.mimetype, // Store the MIME type
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
       },
       firstName,
       lastName,

@@ -41,43 +41,80 @@ const Dashboard = () => {
         data: list.map(
           (data) => (parseInt(data.marks1) + parseInt(data.marks2)) / 2
         ),
-        backgroundColor: "white",
-        borderColor: "#977af6",
-        borderWidth: 2,
+        backgroundColor: "gray",
+        borderColor: "#202020",
+        borderWidth: 15,
       },
     ],
   };
-
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth();
+  const day = new Date().getDate();
   return (
     <>
       <Navbar />
-    <div className="dashboard">
-      <div className="AdminContainer">
-        {adminData.map((item, index) => (
-          <div className="AdminCard" key={index}>
-            {item.profilePicture && item.profilePicture.contentType && (
-              <div className="adminpic">
-                <img
-                  id="pic"
-                  src={imagefrombuffer({
-                    type: item.profilePicture?.contentType,
-                    data: item.profilePicture?.data?.data,
-                  })}
-                  alt="Profile"
-                />
+      <div className="dashboard">
+        <div className="hero-class">
+          <section className="hero">
+            <div className="AdminContainer">
+              {adminData.map((item, index) => (
+                <div className="AdminCard" key={index}>
+                  {item.profilePicture && item.profilePicture.contentType && (
+                    <div className="adminpic">
+                      <img
+                        id="pic"
+                        src={imagefrombuffer({
+                          type: item.profilePicture?.contentType,
+                          data: item.profilePicture?.data?.data,
+                        })}
+                        alt="Profile"
+                      />
+                    </div>
+                  )}
+                  <div className="AdminInfo">
+                    <span style={{ textAlign: "center" }}></span>
+                    <h3>{`${item.firstName} ${item.lastName}`}</h3>
+                    <p>{`${item.email}`}</p>
+                    <p>{`+91${item.phone}`}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="Schedule">
+                <h3>Schedule</h3>
+                <table border="2">
+                  <tr>
+                    <th>Subject</th>
+                    <th>Time</th>
+                  </tr>
+                  <tr>
+                    <td>Maths</td>
+                    <td>10:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Science</td>
+                    <td>11:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>English</td>
+                    <td>01:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>History</td>
+                    <td>02:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Geography</td>
+                    <td>04:00 PM</td>
+                  </tr>
+                </table>
               </div>
-            )}
-            <div className="AdminInfo">
-              <span style={{ textAlign: "center" }}></span>
-              <h3>{`${item.firstName} ${item.lastName}`}</h3>
-              <p>{`${item.email}`}</p>
-              <p>{`+91${item.phone}`}</p>
             </div>
-          </div>
-        ))}
-      <LineChart chartData={userData} />
+          </section>
+          <section className="hero">
+            <LineChart chartData={userData} />
+          </section>
+        </div>
       </div>
-    </div>
     </>
   );
 };

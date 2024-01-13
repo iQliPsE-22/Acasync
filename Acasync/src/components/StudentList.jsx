@@ -27,7 +27,6 @@ const StudentList = () => {
   const handleFormList = async (e) => {
     e.preventDefault();
     try {
-      console.log(students);
       const response = await fetch("http://localhost:8080/list", {
         method: "POST",
         headers: {
@@ -122,8 +121,8 @@ const StudentList = () => {
           ))}
         </tbody>
       </table>
-      <div className="student-form">
-        <form onSubmit={handleFormList}>
+      <div >
+        <form onSubmit={handleFormList} className="student-form">
           <input
             type="text"
             placeholder="ID"
