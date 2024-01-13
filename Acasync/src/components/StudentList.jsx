@@ -61,26 +61,26 @@ const StudentList = () => {
     }
   };
 
-  const deleteStudent = async (enrollmentId) => {
-    console.log(enrollmentId);
-    try {
-      const response = await fetch(
-        `http://localhost:8080/list/${enrollmentId}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to delete student");
-      }
-      setList(list.filter((student) => student.enrollmentId !== enrollmentId));
-    } catch (error) {
-      console.error("Error deleting student:", error);
-    }
-  };
+  // const deleteStudent = async (enrollmentId) => {
+  //   console.log(enrollmentId);
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:8080/list/${enrollmentId}`,
+  //       {
+  //         method: "DELETE",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error("Failed to delete student");
+  //     }
+  //     setList(list.filter((student) => student.enrollmentId !== enrollmentId));
+  //   } catch (error) {
+  //     console.error("Error deleting student:", error);
+  //   }
+  // };
 
   return (
     <div className="student-list-container">
@@ -113,7 +113,7 @@ const StudentList = () => {
               <td>
                 <button
                   className="delete-button"
-                  onClick={() => deleteStudent(student.enrollmentId)}
+                  // onClick={() => deleteStudent(student.enrollmentId)}
                 >
                   Delete
                 </button>
