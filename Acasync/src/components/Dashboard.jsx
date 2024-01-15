@@ -43,7 +43,7 @@ const Dashboard = () => {
         ),
         backgroundColor: "gray",
         borderColor: "#202020",
-        borderWidth: 15,
+        borderWidth: 7,
       },
     ],
   };
@@ -80,32 +80,39 @@ const Dashboard = () => {
                 </div>
               ))}
               <div className="Schedule">
+                <h2>
+                  {day}/{month} /{year}
+                </h2>
                 <h3>Schedule</h3>
                 <table border="2">
-                  <tr>
-                    <th>Subject</th>
-                    <th>Time</th>
-                  </tr>
-                  <tr>
-                    <td>Maths</td>
-                    <td>10:00 AM</td>
-                  </tr>
-                  <tr>
-                    <td>Science</td>
-                    <td>11:00 AM</td>
-                  </tr>
-                  <tr>
-                    <td>English</td>
-                    <td>01:00 PM</td>
-                  </tr>
-                  <tr>
-                    <td>History</td>
-                    <td>02:00 PM</td>
-                  </tr>
-                  <tr>
-                    <td>Geography</td>
-                    <td>04:00 PM</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      <th>Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Maths</td>
+                      <td>10:00 AM</td>
+                    </tr>
+                    <tr>
+                      <td>Science</td>
+                      <td>11:00 AM</td>
+                    </tr>
+                    <tr>
+                      <td>English</td>
+                      <td>01:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>History</td>
+                      <td>02:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Geography</td>
+                      <td>04:00 PM</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

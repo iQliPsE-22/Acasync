@@ -10,6 +10,7 @@ import StudentList from "./components/StudentList";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Attendance from "./components/Attendance";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/admin-signup" element={<AdminSign />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/list" element={<StudentList />} />
+          <Route path="/attendance" element={<Attendance />} />
         </Routes>
       </BrowserRouter>
       <Footer />
