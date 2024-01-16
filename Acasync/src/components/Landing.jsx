@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import INS from "../Assests/taxi-122.gif";
-import STUD from "../Assests/3d-casual-life-student-girl-with-magnifying-glass.png";
+import INS from "./Assests/taxi-122.gif";
+import STUD from "./Assests/3d-casual-life-student-girl-with-magnifying-glass.png";
 import "./Landing.css";
 const Landing = () => {
   function handleExploreClick() {

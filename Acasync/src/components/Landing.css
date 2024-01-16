@@ -33,7 +33,7 @@
 
 .banner {
   height: 150vh;
-  background-image: url("../Assests/top.jpeg");
+  background-image: url("./Assests/top.jpeg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("../Assests/bottom.jpeg");
+  background-image: url("./Assests/bottom.jpeg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

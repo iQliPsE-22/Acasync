@@ -1,9 +1,9 @@
 import React from "react";
 import "../App.css";
 import "./footer.css"; // Import your custom CSS file for the footer
-import insta from "../Assests/insta.png";
-import githubImage from "../Assests/github.png";
-import linkedinImage from "../Assests/linkedin.png";
+import insta from "./Assests/insta.png";
+import githubImage from "./Assests/github.png";
+import linkedinImage from "./Assests/linkedin.png";
 const Footer = () => {
   return (
     <footer className="footer">
