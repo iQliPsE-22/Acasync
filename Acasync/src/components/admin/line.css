@@ -1,7 +1,7 @@
 .line {
     background-color: rgb(50, 50, 50);
-    height: 50vh;
-    width: 50vw;
+    height: 58vh;
+    width: 58vw;
     border-radius: 7px;
     padding-left: 10px;
 }
@@ -9,4 +9,15 @@
 .line canvas {
     height: 100%;
     width: 100%;
+}
+
+#pie {
+    height: 70vh;
+    width: 90vw;
+}
+
+#pie canvas {
+    height: 100%;
+    width: 100%;
+
 }

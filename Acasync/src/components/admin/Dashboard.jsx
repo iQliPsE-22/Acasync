@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import LineChart from "./LineChart";
+import PieChart from "./PieChart";
 
-const Dashboard = () => {
+const Dash = () => {
   const [adminData, setAdminData] = useState([]);
   const [list, setList] = useState([]);
+  const [studData, setStudData] = useState([]);
 
   useEffect(() => {
     fetchList();
     fetchAdminData();
+    fetchStudData();
   }, []);
 
   const fetchList = async () => {
@@ -32,7 +35,21 @@ const Dashboard = () => {
       console.error("Error fetching admin data:", error);
     }
   };
-
+  const fetchStudData = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/student");
+      const data = await response.json();
+      setStudData(data);
+    } catch (error) {
+      console.error("Error fetching Student data:", error);
+    }
+  };
+  var male = 0;
+  var female = 0;
+  studData.forEach((student) => {
+    if (student.gender === "male") male++;
+    else female++;
+  });
   const userData = {
     labels: list.map((data) => data.name),
     datasets: [
@@ -44,6 +61,16 @@ const Dashboard = () => {
         backgroundColor: "gray",
         borderColor: "#202020",
         borderWidth: 7,
+      },
+    ],
+  };
+  const stud = {
+    labels: ["Female", "Male"],
+    datasets: [
+      {
+        label: "Students",
+        data: [female, male],
+        backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
       },
     ],
   };
@@ -122,6 +149,7 @@ const Dashboard = () => {
           </section>
           <section className="hero">
             <LineChart chartData={userData} />
+            <PieChart chartData={stud} />
           </section>
         </div>
       </div>
@@ -129,4 +157,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dash;

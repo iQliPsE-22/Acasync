@@ -1,17 +1,16 @@
 import "./App.css";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Admin from "./components/Admin";
-import StudentSign from "./components/StudentSign";
-import AdminSign from "./components/AdminSign";
-import Dashboard from "./components/Dashboard";
-import StudentList from "./components/StudentList";
+import Login from "./components/student/Login";
+import Admin from "./components/admin/Admin";
+import StudentSign from "./components/student/StudentSign.jsx";
+import AdminSign from "./components/admin/AdminSign";
+import Dashboard from "./components/admin/Dashboard";
+import StudentList from "./components/student/StudentList";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Attendance from "./components/Attendance";
-
+import Attendance from "./components/admin/Attendance";
+import Dash from "./components/student/DashBoard.jsx";
 function App() {
   return (
     <div className="App">
@@ -25,7 +24,9 @@ function App() {
           <Route path="/admin-signup" element={<AdminSign />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/list" element={<StudentList />} />
+          <Route path="/stud-dash" element={<Dash />} />
           <Route path="/attendance" element={<Attendance />} />
+
         </Routes>
       </BrowserRouter>
       <Footer />

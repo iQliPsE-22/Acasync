@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
 const StudentSign = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     profilePicture: null,
     firstName: "",
@@ -14,15 +16,18 @@ const StudentSign = () => {
     course: "",
     stream: "",
     semester: "",
+    roll: "", // Add roll field
   });
 
   const handleFormSubmit = async (e) => {
+    navigate("/student-login");
     e.preventDefault();
     try {
       const formDataToSubmit = new FormData();
       formDataToSubmit.append("profilePicture", formData.profilePicture);
       formDataToSubmit.append("firstName", formData.firstName);
       formDataToSubmit.append("lastName", formData.lastName);
+      formDataToSubmit.append("roll", formData.roll);
       formDataToSubmit.append("email", formData.email);
       formDataToSubmit.append("dob", formData.dob);
       formDataToSubmit.append("gender", formData.gender);
@@ -49,6 +54,7 @@ const StudentSign = () => {
         course: "",
         stream: "",
         semester: "",
+        roll: "",
       });
     } catch (error) {
       console.error("Error submitting Student data:", error);
@@ -81,7 +87,7 @@ const StudentSign = () => {
               accept="image/*"
               alt="dp"
               onChange={handleProfilePictureChange}
-              // required
+              required
             />
             <label htmlFor="user">First Name</label>
             <input
@@ -90,7 +96,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, firstName: e.target.value })
               }
-              // required
+              required
             />
             <label htmlFor="pass">Last Name</label>
             <input
@@ -99,7 +105,16 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, lastName: e.target.value })
               }
-              // required
+              required
+            />
+            <label htmlFor="pass">ID</label>
+            <input
+              type="text"
+              value={formData.roll}
+              onChange={(e) =>
+                setFormData({ ...formData, roll: e.target.value })
+              }
+              required
             />
             <label htmlFor="pass">Email</label>
             <input
@@ -116,7 +131,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, dob: e.target.value })
               }
-              // required
+              required
             />
             <label htmlFor="gender">Gender</label>
             <div id="radio">
@@ -149,7 +164,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, college: e.target.value })
               }
-              // required
+              required
             />
             <label htmlFor="pass">Course</label>
             <input
@@ -158,7 +173,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, course: e.target.value })
               }
-              // required
+              required
             />
             <label htmlFor="pass">Stream/Specialization</label>
             <input
@@ -167,7 +182,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, stream: e.target.value })
               }
-              // required
+              required
             />
             <label htmlFor="pass">Semester</label>
             <input
@@ -176,7 +191,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, semester: e.target.value })
               }
-              // required
+              required
             />
           </div>
           <input type="submit" value="Submit" />

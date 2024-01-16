@@ -1,14 +1,19 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
+  const naviagate = useNavigate();
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    naviagate("/stud-dash");
+  };
   return (
     <div>
       <div className="stud-login">
         <div className="back-stud">
           <h1>Acasync</h1>
         </div>
-        <form className="stud-form">
+        <form className="stud-form" onSubmit = {handleFormSubmit}>
           <h1>Student Login</h1>
           <label htmlFor="user">User ID</label>
           <input type="number" />

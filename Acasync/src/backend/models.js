@@ -20,6 +20,7 @@ const StudentSchema = new mongoose.Schema({
   },
   firstName: String,
   lastName: String,
+  roll: String,
   email: String,
   dob: String,
   gender: String,

@@ -83,3 +83,9 @@ img#pic {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.adminpic {
+  margin-bottom:20px;
+  display: flex;
+  flex-direction: row;
+}
