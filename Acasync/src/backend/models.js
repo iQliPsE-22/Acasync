@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const AdminSchema = new mongoose.Schema({
   profilePicture: {
@@ -14,12 +14,15 @@ const AdminSchema = new mongoose.Schema({
 });
 
 const StudentSchema = new mongoose.Schema({
-  profilePicture: String,
+  profilePicture: {
+    data: Buffer,
+    contentType: String,
+  },
   firstName: String,
   lastName: String,
+  email: String,
   dob: String,
-  fatherName: String,
-  motherName: String,
+  gender: String,
   college: String,
   course: String,
   stream: String,
@@ -33,8 +36,17 @@ const ListSchema = new mongoose.Schema({
   marks2: String,
 });
 
+const Attendance = new mongoose.Schema({
+  enrollmentId: String,
+  name: String,
+  maths: String,
+  science: String,
+  english: String,
+});
+
 module.exports = {
-  Admin: mongoose.model('Admin', AdminSchema),
-  Student: mongoose.model('Student', StudentSchema),
-  List: mongoose.model('List', ListSchema),
+  Admin: mongoose.model("Admin", AdminSchema),
+  Student: mongoose.model("Student", StudentSchema),
+  List: mongoose.model("List", ListSchema),
+  Attendance: mongoose.model("Attendance", Attendance),
 };

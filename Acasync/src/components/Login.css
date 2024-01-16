@@ -6,6 +6,7 @@
   align-items: center;
   min-height: 150vh;
 }
+
 .stud-login {
   background-size: cover;
   background-color: rgb(189, 185, 185);
@@ -14,23 +15,27 @@
   align-items: center;
   min-height: 100vh;
 }
+
 .stud-sign form {
   margin-top: -1rem;
   background-color: transparent;
   position: absolute;
   outline: none;
 }
+
 .stud-login form {
   margin-top: -1rem;
   background-color: transparent;
   position: absolute;
   outline: none;
 }
+
 .back-stud {
   position: absolute;
   top: 0;
   font-size: 10rem;
 }
+
 .back-stud h1 {
   background-image: url("../Assests/trees-6207925.jpg");
   background-size: cover;
@@ -41,10 +46,12 @@
   font-family: fantasy;
   box-shadow: 10px 100px 20px #2b5e6f;
 }
+
 .stud-form {
   opacity: 0.4;
   transition: 0.5s;
 }
+
 form.stud-form {
   background-color: rgb(239, 255, 252);
   padding: 40px;
@@ -53,9 +60,11 @@ form.stud-form {
   max-width: 400px;
   width: 100%;
 }
+
 .stud-form:hover {
   opacity: 0.95 !important;
 }
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -74,12 +83,15 @@ label {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 input[type="submit"] {
   margin-top: 50px;
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
 }
+
+
 
 input[type="submit"]:hover {
   background-color: #0056b3;
@@ -96,4 +108,11 @@ button.student-switch {
   cursor: pointer;
   position: absolute;
   right: 50px;
+}
+#radio{
+  display: flex;
+  justify-content: center;
+}
+input[type="radio"] {
+  float: left;  
 }

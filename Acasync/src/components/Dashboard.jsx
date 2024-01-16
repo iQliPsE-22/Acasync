@@ -48,8 +48,11 @@ const Dashboard = () => {
     ],
   };
   const year = new Date().getFullYear();
-  const month = new Date().getMonth();
-  const day = new Date().getDate();
+  let month = new Date().getMonth() + 1;
+  let day = new Date().getDate();
+
+  if (month <= 9) month = "0" + month;
+  if (day <= 9) day = "0" + day;
   return (
     <>
       <Navbar />
@@ -81,7 +84,7 @@ const Dashboard = () => {
               ))}
               <div className="Schedule">
                 <h2>
-                  {day}/{month} /{year}
+                  {day}/{month}/{year}
                 </h2>
                 <h3>Schedule</h3>
                 <table border="2">

@@ -4,30 +4,55 @@ import { Link } from "react-router-dom";
 
 const StudentSign = () => {
   const [formData, setFormData] = useState({
-    profilePicture: "",
+    profilePicture: null,
     firstName: "",
     lastName: "",
+    email: "",
     dob: "",
-    fatherName: "",
-    motherName: "",
+    gender: " ",
     college: "",
     course: "",
     stream: "",
     semester: "",
   });
 
-  const [previewImage, setPreviewImage] = useState(null); // State for image preview
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Here, you can handle the form submission logic, e.g., sending data to a server.
-    const response = await fetch("http://localhost:8080/student", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    });
-    const data = await response.json();
-    console.log(data);
+    try {
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append("profilePicture", formData.profilePicture);
+      formDataToSubmit.append("firstName", formData.firstName);
+      formDataToSubmit.append("lastName", formData.lastName);
+      formDataToSubmit.append("email", formData.email);
+      formDataToSubmit.append("dob", formData.dob);
+      formDataToSubmit.append("gender", formData.gender);
+      formDataToSubmit.append("college", formData.college);
+      formDataToSubmit.append("course", formData.course);
+      formDataToSubmit.append("stream", formData.stream);
+      formDataToSubmit.append("semester", formData.semester);
+
+      const response = await fetch("http://localhost:8080/student", {
+        method: "POST",
+        body: formDataToSubmit,
+      });
+      const data = await response.json();
+      console.log(data);
+
+      setFormData({
+        profilePicture: null,
+        firstName: "",
+        lastName: "",
+        email: "",
+        dob: "",
+        gender: "",
+        college: "",
+        course: "",
+        stream: "",
+        semester: "",
+      });
+    } catch (error) {
+      console.error("Error submitting Student data:", error);
+    }
   };
 
   const handleProfilePictureChange = (e) => {
@@ -36,9 +61,6 @@ const StudentSign = () => {
       ...prevFormData,
       profilePicture: file,
     }));
-
-    // Create a temporary URL for image preview
-    setPreviewImage(URL.createObjectURL(file));
   };
 
   return (
@@ -59,17 +81,8 @@ const StudentSign = () => {
               accept="image/*"
               alt="dp"
               onChange={handleProfilePictureChange}
-              required
+              // required
             />
-            {previewImage && ( // Render the image preview if available
-              <div className="image-preview">
-                <img
-                  src={previewImage}
-                  alt="Profile Preview"
-                  style={{ maxWidth: "200px", marginBottom: "10px" }}
-                />
-              </div>
-            )}
             <label htmlFor="user">First Name</label>
             <input
               type="text"
@@ -77,7 +90,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, firstName: e.target.value })
               }
-              required
+              // required
             />
             <label htmlFor="pass">Last Name</label>
             <input
@@ -86,7 +99,15 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, lastName: e.target.value })
               }
-              required
+              // required
+            />
+            <label htmlFor="pass">Email</label>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
             <label htmlFor="dob">Date of birth</label>
             <input
@@ -95,25 +116,31 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, dob: e.target.value })
               }
-              required
+              // required
             />
-            <label htmlFor="pass">Father's Name</label>
-            <input
-              type="text"
-              value={formData.fatherName}
-              onChange={(e) =>
-                setFormData({ ...formData, fatherName: e.target.value })
-              }
-              required
-            />
-            <label htmlFor="pass">Mother's Name</label>
-            <input
-              type="text"
-              value={formData.motherName}
-              onChange={(e) =>
-                setFormData({ ...formData, motherName: e.target.value })
-              }
-            />
+            <label htmlFor="gender">Gender</label>
+            <div id="radio">
+              <label htmlFor="gender">Male</label>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={formData.gender === "male"}
+                onChange={(e) => {
+                  setFormData({ ...formData, gender: e.target.value });
+                }}
+              />
+              <label htmlFor="gender">Female</label>
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={formData.gender === "female"}
+                onChange={(e) => {
+                  setFormData({ ...formData, gender: e.target.value });
+                }}
+              />
+            </div>
             <label htmlFor="info">Course Information</label>
             <label htmlFor="pass">College</label>
             <input
@@ -122,7 +149,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, college: e.target.value })
               }
-              required
+              // required
             />
             <label htmlFor="pass">Course</label>
             <input
@@ -131,7 +158,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, course: e.target.value })
               }
-              required
+              // required
             />
             <label htmlFor="pass">Stream/Specialization</label>
             <input
@@ -140,7 +167,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, stream: e.target.value })
               }
-              required
+              // required
             />
             <label htmlFor="pass">Semester</label>
             <input
@@ -149,7 +176,7 @@ const StudentSign = () => {
               onChange={(e) =>
                 setFormData({ ...formData, semester: e.target.value })
               }
-              required
+              // required
             />
           </div>
           <input type="submit" value="Submit" />
