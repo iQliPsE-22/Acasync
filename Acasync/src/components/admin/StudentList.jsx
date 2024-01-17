@@ -89,9 +89,9 @@ const StudentList = () => {
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Marks 1</th>
-            <th>Marks 2</th>
-            <th>Percentage</th>
+            <th>Semester 1</th>
+            <th>Semester 2</th>
+            <th>Overall</th>
             <th>Actions</th>
           </tr>
         </thead>

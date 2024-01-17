@@ -58,9 +58,12 @@ const Dash = () => {
         data: list.map(
           (data) => (parseInt(data.marks1) + parseInt(data.marks2)) / 2
         ),
-        backgroundColor: "gray",
-        borderColor: "#202020",
-        borderWidth: 7,
+        backgroundColor: list.map((data) => {
+          const averageMarks =
+            (parseInt(data.marks1) + parseInt(data.marks2)) / 2;
+          return averageMarks < 33 ? "red" : "green";
+        }),
+        borderWidth: 5,
       },
     ],
   };

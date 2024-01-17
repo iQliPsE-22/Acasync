@@ -84,8 +84,14 @@ img#pic {
   margin-bottom: 20px;
 }
 
+.Schedule td,
+th {
+  padding: 8px;
+
+}
+
 .adminpic {
-  margin-bottom:20px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
 }

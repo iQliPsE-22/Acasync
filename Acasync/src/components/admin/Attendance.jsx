@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../student/StudentList.css";
+import "./StudentList.css";
 const Attendance = () => {
   const [attendance, setAttendance] = useState([]);
   const [list, setList] = useState([]);

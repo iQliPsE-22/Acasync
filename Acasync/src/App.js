@@ -5,7 +5,7 @@ import Admin from "./components/admin/Admin";
 import StudentSign from "./components/student/StudentSign.jsx";
 import AdminSign from "./components/admin/AdminSign";
 import Dashboard from "./components/admin/Dashboard";
-import StudentList from "./components/student/StudentList";
+import StudentList from "./components/admin/StudentList";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
