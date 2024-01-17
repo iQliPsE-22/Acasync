@@ -119,7 +119,9 @@ const Dashboard = () => {
               </div>
             </div>
           </section>
-          <section className="hero"></section>
+          <section className="hero">
+            <div className="AdminContainer">Fee Status</div>
+          </section>
         </div>
       </div>
     </>

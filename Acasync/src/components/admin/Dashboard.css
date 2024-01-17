@@ -3,7 +3,7 @@
 .dashboard {
   background: #c5c5c5;
   overflow-x: hidden;
-  height: 100vh;
+  height: auto;
   font-family: 'Julius Sans One', 'Oxygen', sans-serif;
 }
 

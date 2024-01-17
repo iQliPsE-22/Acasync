@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./StudentList.css";
 const Attendance = () => {
-  const [attendance, setAttendance] = useState([]);
+  // const [attendance, setAttendance] = useState([]);
   const [list, setList] = useState([]);
   useEffect(() => {
     fetchList();
@@ -15,7 +15,7 @@ const Attendance = () => {
       console.error("Error fetching list data:", error);
     }
   };
-  const handleSubmit = () => {};
+  // const handleSubmit = () => {};
   return (
     <div className="student-list-container">
       <h1 className="student-list-header">Student List</h1>
