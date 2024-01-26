@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
 

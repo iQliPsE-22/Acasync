@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../admin/Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 
 const Dashboard = () => {
   const [studData, setStudData] = useState([]);
@@ -120,7 +120,28 @@ const Dashboard = () => {
             </div>
           </section>
           <section className="hero">
-            <div className="AdminContainer">Fee Status</div>
+            <div className="Schedule">
+              Fee Status
+              <table border="2">
+                <thead>
+                  <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td>Admission Fee</td>
+                    <td>1000</td>
+                    <td>Paid</td>
+                  </tr>
+                  <tr>
+                    <td>Monthly Fee</td>
+                    <td>1000</td>
+                    <td>Paid</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
           </section>
         </div>
       </div>

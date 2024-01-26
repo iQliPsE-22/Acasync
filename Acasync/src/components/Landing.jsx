@@ -8,8 +8,13 @@ const Landing = () => {
     const homeContainer = document.getElementById("bottom");
     homeContainer.scrollIntoView({ behavior: "smooth" });
   }
+  const obj = {
+    name: "Acasync",
+    roll: 1234567890,
+  };
   return (
     <div className="land-container">
+      
       <div className="banner">
         <div id="top">
           <h2>Let's Begin your Wizarding journey with Acasync</h2>

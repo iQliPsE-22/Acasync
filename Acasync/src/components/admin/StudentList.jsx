@@ -60,27 +60,56 @@ const StudentList = () => {
     }
   };
 
-  // const deleteStudent = async (enrollmentId) => {
-  //   console.log(enrollmentId);
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:8080/list/${enrollmentId}`,
-  //       {
-  //         method: "DELETE",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     if (!response.ok) {
-  //       throw new Error("Failed to delete student");
-  //     }
-  //     setList(list.filter((student) => student.enrollmentId !== enrollmentId));
-  //   } catch (error) {
-  //     console.error("Error deleting student:", error);
-  //   }
-  // };
+  const deleteStudent = async (enrollmentId) => {
+    console.log(enrollmentId);
+    try {
+      const response = await fetch(
+        `http://localhost:8080/list/${enrollmentId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to delete student");
+      }
+      setList(list.filter((student) => student.enrollmentId !== enrollmentId));
+    } catch (error) {
+      console.error("Error deleting student:", error);
+    }
+  };
+  const updateStudent = async (enrollmentId) => {
+    const updateStudent = list.find(
+      (student) => student.enrollmentId === enrollmentId
+    );
+    console.log(enrollmentId);
+    try {
+      setNewStudent({
+        enrollmentId: ` ${enrollmentId}`,
+        name: `${updateStudent.name}`,
+        marks1: `${updateStudent.marks1}`,
+        marks2: `${updateStudent.marks2}`,
+      });
 
+      const response = await fetch(
+        `http://localhost:8080/list/${enrollmentId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to update student");
+      }
+      setList(list.filter((student) => student.enrollmentId !== enrollmentId));
+    } catch (error) {
+      console.error("Error updating student:", error);
+    }
+  };
   return (
     <div className="student-list-container">
       <h1 className="student-list-header">Student List</h1>
@@ -112,16 +141,17 @@ const StudentList = () => {
               <td>
                 <button
                   className="delete-button"
-                  // onClick={() => deleteStudent(student.enrollmentId)}
+                  onClick={() => deleteStudent(student.enrollmentId)}
                 >
                   Delete
                 </button>
+                
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div >
+      <div>
         <form onSubmit={handleFormList} className="student-form">
           <input
             type="text"
@@ -155,6 +185,7 @@ const StudentList = () => {
               setNewStudent({ ...newStudent, marks2: e.target.value })
             }
           />
+
           <button type="submit" onClick={addStudent} className="add-button">
             Add Student
           </button>

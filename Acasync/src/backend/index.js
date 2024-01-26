@@ -97,22 +97,36 @@ server.post("/list", async (req, res) => {
   }
 });
 
-// CRUD - Create Student
-server.post("/list", async (req, res) => {
+server.delete("/list/:enrollmentId", async (req, res) => {
   try {
-    const { enrollmentId, name, marks1, marks2 } = req.body;
-    const list = new List({
-      enrollmentId,
-      name,
-      marks1,
-      marks2,
-    });
-    await list.save();
-    res.status(201).json({ message: "List item created successfully" });
+    const { enrollmentId } = req.params;
+    await List.deleteOne({ enrollmentId });
+    res.status(200).json({ message: "List item deleted successfully" });
+    console.log(enrollmentId + ":Deleted");
   } catch (error) {
-    res.status(500).json({ error: "Error creating list item" });
+    res.status(500).json({ error: "Error deleting list item" });
   }
 });
+
+server.put("/list/:enrollmentId", async (req, res) => {
+  try {
+    const query = { enrollmentId: req.params.enrollmentId };
+    const { enrollmentId, name, marks1, marks2 } = req.body;
+    const update = { enrollmentId, name, marks1, marks2 };
+    const options = { new: true }; // Return the modified document rather than the original
+    const updatedItem = await List.findOneAndUpdate(query, update, options);
+    if (!updatedItem) {
+      return res.status(404).json({ error: "Item not found" });
+    }
+    res
+      .status(200)
+      .json({ message: "List item updated successfully", updatedItem });
+  } catch (error) {
+    res.status(500).json({ error: "Error updating list item" });
+  }
+});
+
+// CRUD - Create Student
 
 server.post("/attendance", async (req, res) => {
   try {
