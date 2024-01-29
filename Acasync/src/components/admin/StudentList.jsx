@@ -1,9 +1,8 @@
 // src/StudentList.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StudentList.css";
-import { useEffect } from "react";
-
-const StudentList = () => {
+import { Link } from "react-router-dom";
+const StudentList = ({setRoll}) => {
   const [students, setStudents] = useState([]);
   const [newStudent, setNewStudent] = useState({
     enrollmentId: "",
@@ -12,6 +11,7 @@ const StudentList = () => {
     marks2: "",
   });
   const [list, setList] = useState([]);
+  const [marks, setMarks] = useState([]);
   const addStudent = () => {
     if (
       newStudent.enrollmentId &&
@@ -23,7 +23,6 @@ const StudentList = () => {
       setNewStudent({ enrollmentId: "", name: "", marks1: "", marks2: "" });
     }
   };
-
   const handleFormList = async (e) => {
     e.preventDefault();
     try {
@@ -53,8 +52,11 @@ const StudentList = () => {
   const fetchList = async () => {
     try {
       const response = await fetch("http://localhost:8080/list");
+      const response1 = await fetch("http://localhost:8080/student");
       const data = await response.json();
+      const data1 = await response1.json();
       setList(data);
+      setMarks(data1);
     } catch (error) {
       console.error("Error fetching list data:", error);
     }
@@ -80,35 +82,8 @@ const StudentList = () => {
       console.error("Error deleting student:", error);
     }
   };
-  const updateStudent = async (enrollmentId) => {
-    const updateStudent = list.find(
-      (student) => student.enrollmentId === enrollmentId
-    );
-    console.log(enrollmentId);
-    try {
-      setNewStudent({
-        enrollmentId: ` ${enrollmentId}`,
-        name: `${updateStudent.name}`,
-        marks1: `${updateStudent.marks1}`,
-        marks2: `${updateStudent.marks2}`,
-      });
-
-      const response = await fetch(
-        `http://localhost:8080/list/${enrollmentId}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to update student");
-      }
-      setList(list.filter((student) => student.enrollmentId !== enrollmentId));
-    } catch (error) {
-      console.error("Error updating student:", error);
-    }
+  const handleRollClick = async (e) => {
+    setRoll(e.target.innerHTML);
   };
   return (
     <div className="student-list-container">
@@ -127,7 +102,11 @@ const StudentList = () => {
         <tbody>
           {list.map((student, index) => (
             <tr key={index}>
-              <td>{student.enrollmentId}</td>
+              <td>
+                <Link to="/marks" onClick={handleRollClick}>
+                  {student.enrollmentId}
+                </Link>
+              </td>
               <td>{student.name}</td>
               <td>{student.marks1}</td>
               <td>{student.marks2}</td>
@@ -145,7 +124,6 @@ const StudentList = () => {
                 >
                   Delete
                 </button>
-                
               </td>
             </tr>
           ))}
