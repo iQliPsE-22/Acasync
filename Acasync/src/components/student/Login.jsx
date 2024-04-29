@@ -5,7 +5,7 @@ const Login = () => {
   const naviagate = useNavigate();
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    naviagate("/stud-dash");
+    naviagate("/student/dash");
   };
   return (
     <div>

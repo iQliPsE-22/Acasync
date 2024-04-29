@@ -134,12 +134,12 @@ const AdminSign = () => {
             required
           />
           <input type="submit" value="Signup" />
-          <Link to="/admin-login">
+          <Link to="/admin/login">
             <h3>Login here...</h3>
           </Link>
         </form>
 
-        <Link to="/student-signup">
+        <Link to="/student/signup">
           <button className="student-switch">Switch to Student</button>
         </Link>
       </div>

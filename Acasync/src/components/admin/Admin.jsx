@@ -12,7 +12,7 @@ const Admin = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    navigate("/admin/dashboard");
   };
 
   const handleInputChange = (e) => {

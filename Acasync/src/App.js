@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Attendance from "./components/admin/Attendance";
 import Dash from "./components/student/DashBoard.jsx";
 import Announcement from "./components/admin/Announcement";
+
 function App() {
   return (
     <div className="App">
@@ -19,13 +20,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/student-login" element={<Login />} />
-          <Route path="/admin-login" element={<Admin />} />
-          <Route path="/student-signup" element={<StudentSign />} />
-          <Route path="/admin-signup" element={<AdminSign />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/list" element={<StudentList />} />
-          <Route path="/stud-dash" element={<Dash />} />
+          <Route path="/admin/login" element={<Admin />} />
+          <Route path="/admin/signup" element={<AdminSign />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/list" element={<StudentList />} />
+
+          <Route path="/student/login" element={<Login />} />
+          <Route path="/student/signup" element={<StudentSign />} />
+          <Route path="/student/dashboard" element={<Dash />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/announcements" element={<Announcement />} />
         </Routes>

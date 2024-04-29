@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div>Email: deepaklg02@gmail.com</div>
+        <div>Email: abc@gmail.com</div>
         <div>Phone: +917668519318</div>
         <div>
           <a href="https://www.instagram.com/iqlipse_22">
