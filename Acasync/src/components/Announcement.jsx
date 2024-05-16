@@ -1,4 +1,4 @@
-import Accordian from "../Accordian";
+import Accordian from "./Accordian";
 import { useState, useEffect } from "react";
 
 const Announcement = () => {
@@ -77,7 +77,7 @@ const Announcement = () => {
             />
             <textarea
               type="text"
-              className="h-80 w-1/2 border-2 border-black text-center rounded border-none outline-none mb-1"
+              className="h-40 w-1/2 border-2 border-black text-center rounded border-none outline-none mb-1"
               name="announcement"
               placeholder="Announcement"
               onChange={(e) =>
@@ -88,11 +88,11 @@ const Announcement = () => {
             <input
               type="file"
               className="block text-sm text-slate-500
-          file:mr-4 file:py-2 file:px-4
-          file:rounded-full file:border-0
-          file:text-lg file:font-semibold
-          file:bg-violet-50 file:text-violet-700
-          hover:file:bg-violet-100"
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-full file:border-0
+              file:text-lg file:font-semibold
+              file:bg-violet-50 file:text-violet-700
+              hover:file:bg-violet-100"
               name="file"
               onChange={handleProfilePictureChange}
             />

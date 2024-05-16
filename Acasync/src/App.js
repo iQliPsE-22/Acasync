@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Attendance from "./components/admin/Attendance";
 import Dash from "./components/student/DashBoard.jsx";
-import Announcement from "./components/admin/Announcement";
+import Announcement from "./components/Announcement";
 
 function App() {
   return (
