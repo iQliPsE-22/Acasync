@@ -7,6 +7,8 @@ const Announcement = () => {
     announcement: "",
     file: null,
   });
+  const [show, setShow] = useState(false);
+  const path = window.location.pathname;
 
   const [fetchData, setFetchData] = useState([]);
   const handleProfilePictureChange = (e) => {
@@ -49,6 +51,7 @@ const Announcement = () => {
   };
   useEffect(() => {
     handleFetchAnnouncement();
+    setShow(path === "/student/announcements" ? true : false);
   }, []);
 
   return (
@@ -56,58 +59,61 @@ const Announcement = () => {
       <h1 className="bg-[#9072ca] p-4 text-white text-xl w-screen">
         Announcements
       </h1>
-
-      <div className="flex flex-col w-screen items-center">
-        <form
-          className="flex flex-col w-screen items-center"
-          onSubmit={handleAnnouncement}
-        >
-          <input
-            type="text"
-            className="w-1/2 border-2 p-2 border-black text-center"
-            name="subject"
-            placeholder="Subject"
-            onChange={(e) =>
-              setFormData({ ...formData, subject: e.target.value })
-            }
-            value={formData.subject}
-          />
-          <textarea
-            type="text"
-            className="h-80 w-1/2 border-2 border-black text-center"
-            name="announcement"
-            placeholder="Announcement"
-            onChange={(e) =>
-              setFormData({ ...formData, announcement: e.target.value })
-            }
-            value={formData.announcement}
-          />
-          <input
-            type="file"
-            className="block text-sm text-slate-500
+      {!show && (
+        <div className="flex flex-col w-screen items-center">
+          <form
+            className="flex flex-col w-screen items-center"
+            onSubmit={handleAnnouncement}
+          >
+            <input
+              type="text"
+              className="w-1/2 border-2 p-2 border-black text-center rounded border-none outline-none m-1"
+              name="subject"
+              placeholder="Subject"
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
+              value={formData.subject}
+            />
+            <textarea
+              type="text"
+              className="h-80 w-1/2 border-2 border-black text-center rounded border-none outline-none mb-1"
+              name="announcement"
+              placeholder="Announcement"
+              onChange={(e) =>
+                setFormData({ ...formData, announcement: e.target.value })
+              }
+              value={formData.announcement}
+            />
+            <input
+              type="file"
+              className="block text-sm text-slate-500
           file:mr-4 file:py-2 file:px-4
           file:rounded-full file:border-0
           file:text-lg file:font-semibold
           file:bg-violet-50 file:text-violet-700
           hover:file:bg-violet-100"
-            name="file"
-            onChange={handleProfilePictureChange}
-          />
-          <input
-            type="submit"
-            value="Submit"
-            className="w-1/2 p-2 rounded bg-violet-700"
-          />
-        </form>
-      </div>
+              name="file"
+              onChange={handleProfilePictureChange}
+            />
+            <input
+              type="submit"
+              value="Submit"
+              className="w-1/2 p-2 rounded bg-violet-700"
+            />
+          </form>
+        </div>
+      )}
 
       <div className="mt-4">
-        <h1 className="bg-[#9072ca] text-white p-4 text-xl w-screen">
-          Previous Announcements
-        </h1>
+        {!show && (
+          <h1 className="bg-[#9072ca] text-white p-4 text-xl w-screen">
+            Previous Announcements
+          </h1>
+        )}
         <div className="mt-2">
           {fetchData.map((data, index) => (
-            <div>
+            <div className="w-screen">
               <Accordian
                 key={index}
                 subject={data.subject}

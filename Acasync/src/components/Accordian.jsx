@@ -1,4 +1,3 @@
-import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -21,11 +20,13 @@ export default function Accordian({ subject, announcement, file }) {
           <Typography>{announcement}</Typography>
           {file && file.contentType.includes("image") && (
             <img
-              id="pic"
               src={imagefrombuffer({
                 type: file?.contentType,
                 data: file?.data?.data,
               })}
+              height="100"
+              width="100"
+              className="rounded border-2 border-slate"
               alt="Profile"
             />
           )}
