@@ -1,17 +1,17 @@
 import "./App.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/student/Login";
-import Admin from "./components/admin/Admin";
-import StudentSign from "./components/student/StudentSign.jsx";
-import AdminSign from "./components/admin/AdminSign";
-import Dashboard from "./components/admin/Dashboard";
-import StudentList from "./components/admin/StudentList";
+import Login from "./student/Login";
+import Admin from "./admin/Admin";
+import StudentSign from "./student/StudentSign.jsx";
+import AdminSign from "./admin/AdminSign";
+import Dashboard from "./admin/Dashboard";
+import StudentList from "./admin/StudentList";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Attendance from "./components/admin/Attendance";
-import Dash from "./components/student/DashBoard.jsx";
+import Attendance from "./admin/Attendance";
+import Dash from "./student/DashBoard.jsx";
 import Announcement from "./components/Announcement";
 
 function App() {

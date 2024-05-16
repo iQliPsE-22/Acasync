@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../admin/Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
-import Navbar from "./Navbar";
+import Navbar from "../admin/Navbar";
 
 const Dashboard = () => {
   const [studData, setStudData] = useState([]);

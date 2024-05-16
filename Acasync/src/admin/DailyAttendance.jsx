@@ -1,6 +1,6 @@
 import React from "react";
 import "./StudentList.css";
-import QRCodeGenerator from "./../QRGenerator";
+import QRCodeGenerator from "../components/QRGenerator";
 import "../student/StudentSign";
 const DailyAttendance = () => {
   return (
