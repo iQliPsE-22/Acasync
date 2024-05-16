@@ -1,6 +1,5 @@
 import Accordian from "../Accordian";
 import { useState, useEffect } from "react";
-import { imagefrombuffer } from "imagefrombuffer";
 
 const Announcement = () => {
   const [formData, setFormData] = useState({
@@ -53,10 +52,11 @@ const Announcement = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-dvh w-dvw bg-[#121212]">
+    <div className="flex flex-col items-center min-h-dvh h-fit w-dvw bg-[#121212]">
       <h1 className="bg-[#9072ca] p-4 text-white text-xl w-screen">
         Announcements
       </h1>
+
       <div className="flex flex-col w-screen items-center">
         <form
           className="flex flex-col w-screen items-center"
@@ -100,6 +100,7 @@ const Announcement = () => {
           />
         </form>
       </div>
+
       <div className="mt-4">
         <h1 className="bg-[#9072ca] text-white p-4 text-xl w-screen">
           Previous Announcements

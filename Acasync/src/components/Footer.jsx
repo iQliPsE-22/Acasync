@@ -6,8 +6,8 @@ import githubImage from "../Assests/github.png";
 import linkedinImage from "../Assests/linkedin.png";
 const Footer = () => {
   return (
-    <footer className="footer w-screen">
-      <div className="footer-content">
+    <footer className="footer w-screen bg-white ">
+      <div className="footer-content flex justify-between items-center min-h-fit p-8">
         <div>Email: abc@gmail.com</div>
         <div>Phone: +917668519318</div>
         <div>

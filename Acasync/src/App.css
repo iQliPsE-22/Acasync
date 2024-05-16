@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Julius+Sans+One&display=swap");
 
+body {
+  min-height: 100vh;
+}
 button {
   cursor: pointer;
 }
@@ -15,6 +18,11 @@ body::-webkit-scrollbar {
 .itim {
   font-family: "Itim", cursive;
 }
+
+.julius {
+  font-family: "Julius Sans One", sans-serif;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(-10px);

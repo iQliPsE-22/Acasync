@@ -13,13 +13,12 @@ import Header from "./components/Header";
 import Attendance from "./components/admin/Attendance";
 import Dash from "./components/student/DashBoard.jsx";
 import Announcement from "./components/admin/Announcement";
-import StudentAttendance from "./components/student/StudentAttendance";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/admin/login" element={<Admin />} />
@@ -35,8 +34,8 @@ function App() {
           {/* <Route path="/student/attendance" element={<StudentAttendance />} /> */}
           <Route path="/student/announcements" element={<Announcement />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
