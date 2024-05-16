@@ -32,12 +32,12 @@
 
 .back-stud {
   position: absolute;
-  top: 0;
-  font-size: 10rem;
+  top: 20%;
+  font-size: 20rem;
 }
 
 .back-stud h1 {
-  background-image: url("../Assests/trees-6207925.jpg");
+  background-image: url("../../Assests/trees-6207925.jpg");
   background-size: cover;
   background-position: center;
   background-clip: text;
@@ -57,12 +57,12 @@ form.stud-form {
   padding: 40px;
   border-radius: 5px;
   min-height: 350px;
-  max-width: 400px;
+  max-width: 30%;
   width: 100%;
 }
 
 .stud-form:hover {
-  opacity: 0.95 !important;
+  opacity: 0.9 !important;
 }
 
 h1 {
@@ -91,8 +91,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-
-
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
@@ -109,10 +107,10 @@ button.student-switch {
   position: absolute;
   right: 50px;
 }
-#radio{
+#radio {
   display: flex;
   justify-content: center;
 }
 input[type="radio"] {
-  float: left;  
+  float: left;
 }

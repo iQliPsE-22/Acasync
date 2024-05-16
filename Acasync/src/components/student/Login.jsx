@@ -5,26 +5,26 @@ const Login = () => {
   const naviagate = useNavigate();
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    naviagate("/student/dash");
+    naviagate("/student/dashboard");
   };
   return (
     <div>
       <div className="stud-login">
-        <div className="back-stud">
+        <div className="back-stud w-screen">
           <h1>Acasync</h1>
         </div>
-        <form className="stud-form" onSubmit = {handleFormSubmit}>
-          <h1>Student Login</h1>
+        <form className="stud-form" onSubmit={handleFormSubmit}>
+          <h1 className="text-2xl">Student Login</h1>
           <label htmlFor="user">User ID</label>
           <input type="number" />
           <label htmlFor="pass">Password</label>
           <input type="text" />
           <input type="submit" />
-          <Link to="/student-signup">
+          <Link to="/student/signup">
             <h3>Not Registered ?</h3>
           </Link>
         </form>
-        <Link to="/admin-login">
+        <Link to="/admin/login">
           <button className="admin-switch">Switch to Admin</button>
         </Link>
       </div>

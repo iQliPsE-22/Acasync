@@ -1,12 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Julius+Sans+One&display=swap");
+
 button {
   cursor: pointer;
 }
 a {
   cursor: pointer;
 }
-body::-webkit-scrollbar{
-  background-color: black;
+body::-webkit-scrollbar {
+  display: none;
 }
-body::-webkit-scrollbar-thumb{
-  background-color: #2a2929;
+.arrow {
+  animation: bounce 0.7s infinite alternate;
+}
+.itim {
+  font-family: "Itim", cursive;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }

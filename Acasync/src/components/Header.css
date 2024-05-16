@@ -1,19 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Itim&family=Julius+Sans+One&display=swap");
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Itim", cursive;
   font-family: "Julius Sans One", sans-serif;
-  text-align: center;
-  background-color: white;
-  max-height: fit-content;
-  height: 70px;
-  width: 100%;
 }
 
-@media screen and (max-width:920px) {
+@media screen and (max-width: 920px) {
   .header {
     height: 55px;
     width: 100%;

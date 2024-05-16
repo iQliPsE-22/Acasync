@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/student/Login";
 import Admin from "./components/admin/Admin";
@@ -12,6 +13,7 @@ import Header from "./components/Header";
 import Attendance from "./components/admin/Attendance";
 import Dash from "./components/student/DashBoard.jsx";
 import Announcement from "./components/admin/Announcement";
+import StudentAttendance from "./components/student/StudentAttendance";
 
 function App() {
   return (
@@ -24,12 +26,14 @@ function App() {
           <Route path="/admin/signup" element={<AdminSign />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/list" element={<StudentList />} />
+          <Route path="/admin/attendance" element={<Attendance />} />
+          <Route path="admin/announcements" element={<Announcement />} />
 
           <Route path="/student/login" element={<Login />} />
           <Route path="/student/signup" element={<StudentSign />} />
           <Route path="/student/dashboard" element={<Dash />} />
-          <Route path="/attendance" element={<Attendance />} />
-          <Route path="/announcements" element={<Announcement />} />
+          {/* <Route path="/student/attendance" element={<StudentAttendance />} /> */}
+          <Route path="/student/announcements" element={<Announcement />} />
         </Routes>
       </BrowserRouter>
       <Footer />
