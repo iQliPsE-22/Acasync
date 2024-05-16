@@ -6,7 +6,7 @@ import githubImage from "../Assests/github.png";
 import linkedinImage from "../Assests/linkedin.png";
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer w-screen">
       <div className="footer-content">
         <div>Email: abc@gmail.com</div>
         <div>Phone: +917668519318</div>

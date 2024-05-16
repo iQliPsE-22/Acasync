@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors"); // Allow anyone for the request
 const multer = require("multer"); // Allow image to be uploaded to the database
-const { Admin, Student, List, Attendance } = require("./models");
+const { Admin, Student, List, Announcement } = require("./models");
 const connectToDatabase = require("./db"); // Adjust the path as needed
 
 connectToDatabase();
@@ -108,42 +108,37 @@ server.delete("/list/:enrollmentId", async (req, res) => {
   }
 });
 
-server.put("/list/:enrollmentId", async (req, res) => {
+server.post("/announcement", upload.single("file"), async (req, res) => {
   try {
-    const query = { enrollmentId: req.params.enrollmentId };
-    const { enrollmentId, name, marks1, marks2 } = req.body;
-    const update = { enrollmentId, name, marks1, marks2 };
-    const options = { new: true }; // Return the modified document rather than the original
-    const updatedItem = await List.findOneAndUpdate(query, update, options);
-    if (!updatedItem) {
-      return res.status(404).json({ error: "Item not found" });
-    }
-    res
-      .status(200)
-      .json({ message: "List item updated successfully", updatedItem });
-  } catch (error) {
-    res.status(500).json({ error: "Error updating list item" });
-  }
-});
+    const { subject, announcement } = req.body;
+    console.log("Received request body:", req.body);
+    console.log("Received file:", req.file);
 
-// CRUD - Create Student
-
-server.post("/attendance", async (req, res) => {
-  try {
-    const { enrollmentId, name, maths, science, english } = req.body;
-    const attendance = new Attendance({
-      enrollmentId,
-      name,
-      maths,
-      science,
-      english,
+    const announcementData = new Announcement({
+      subject,
+      announcement,
+      file: {
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
+      },
     });
-    await attendance.save();
-    res.status(201).json({ message: "Attendance item created successfully" });
+
+    await announcementData.save();
+    res.status(201).json({ message: "Announcement created successfully" });
   } catch (error) {
-    res.status(500).json({ error: "Error creating Attendance" });
+    console.error("Error creating attendance:", error);
+    res.status(500).json({ error: "Error creating Announcement" });
   }
 });
+server.get("/announcement", async (req, res) => {
+  try {
+    const items = await Announcement.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching announcement data" });
+  }
+});
+// CRUD - Create Student
 
 server.get("/admin", async (req, res) => {
   const docs = await Admin.find();
@@ -162,11 +157,6 @@ server.get("/list", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Error fetching list data" });
   }
-});
-
-server.get("/attendance", async (req, res) => {
-  const docs = await Attendance.find();
-  res.json(docs);
 });
 
 server.listen(8080, () => {
