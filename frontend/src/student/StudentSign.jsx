@@ -36,7 +36,7 @@ const StudentSign = () => {
       formDataToSubmit.append("stream", formData.stream);
       formDataToSubmit.append("semester", formData.semester);
 
-      const response = await fetch("http://localhost:8080/student", {
+      const response = await fetch("http://localhost:3000/student", {
         method: "POST",
         body: formDataToSubmit,
       });

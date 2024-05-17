@@ -29,7 +29,7 @@ const Announcement = () => {
 
     console.log("sending to backend", formData);
 
-    const response = await fetch("http://localhost:8080/announcement", {
+    const response = await fetch("http://localhost:3000/announcement", {
       method: "POST",
       body: formDataToSubmit,
     });
@@ -44,7 +44,7 @@ const Announcement = () => {
     });
   };
   const handleFetchAnnouncement = async () => {
-    const response = await fetch("http://localhost:8080/announcement");
+    const response = await fetch("http://localhost:3000/announcement");
     const data = await response.json();
     console.log(data);
     setFetchData(data);

@@ -27,7 +27,7 @@ const StudentList = () => {
   const handleFormList = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/list", {
+      const response = await fetch("http://localhost:3000/list", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const StudentList = () => {
 
   const fetchList = async () => {
     try {
-      const response = await fetch("http://localhost:8080/list");
+      const response = await fetch("http://localhost:3000/list");
       const data = await response.json();
       setList(data);
     } catch (error) {
@@ -64,7 +64,7 @@ const StudentList = () => {
     console.log(enrollmentId);
     try {
       const response = await fetch(
-        `http://localhost:8080/list/${enrollmentId}`,
+        `http://localhost:3000/list/${enrollmentId}`,
         {
           method: "DELETE",
           headers: {
@@ -94,7 +94,7 @@ const StudentList = () => {
   //     });
 
   //     const response = await fetch(
-  //       `http://localhost:8080/list/${enrollmentId}`,
+  //       `http://localhost:3000/list/${enrollmentId}`,
   //       {
   //         method: "PUT",
   //         headers: {

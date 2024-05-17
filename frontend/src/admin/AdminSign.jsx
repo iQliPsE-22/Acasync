@@ -29,7 +29,7 @@ const AdminSign = () => {
       formDataToSubmit.append("password", formData.password);
       formDataToSubmit.append("confirm", formData.confirm);
 
-      const response = await fetch("http://localhost:8080/admin", {
+      const response = await fetch("http://localhost:3000/admin", {
         method: "POST",
         body: formDataToSubmit,
       });
