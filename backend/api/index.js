@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors"); // Allow anyone for the request
 const multer = require("multer"); // Allow image to be uploaded to the database
-const { Admin, Student, List, Announcement } = require("./models");
-const connectToDatabase = require("./db"); // Adjust the path as needed
+const { Admin, Student, List, Announcement } = require("../models");
+const connectToDatabase = require("../db"); // Adjust the path as needed
 
 connectToDatabase();
 
