@@ -52,7 +52,7 @@ const Announcement = () => {
   useEffect(() => {
     handleFetchAnnouncement();
     setShow(path === "/student/announcements" ? true : false);
-  }, []);
+  }, [path]);
 
   return (
     <div className="flex flex-col items-center min-h-dvh h-fit w-dvw bg-[#121212]">

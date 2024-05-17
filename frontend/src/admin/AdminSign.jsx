@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Admin.css";
 
 const AdminSign = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     profilePicture: null,
@@ -15,8 +16,8 @@ const AdminSign = () => {
   });
 
   const handleFormSubmit = async (e) => {
-    navigate("/admin-login");
     e.preventDefault();
+    navigate("/admin-login");
 
     try {
       console.log("SuccessFull");
@@ -58,91 +59,92 @@ const AdminSign = () => {
     }));
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   return (
-    <div>
-      <div className="admin-login">
-        <div className="back">
-          <h1>Acasync</h1>
-        </div>
-        <form className="admin-form" onSubmit={handleFormSubmit}>
-          <h1>Admin Signup</h1>
+    <div className="admin-login">
+      <div className="back">
+        <h1 id = "admin-back">Acasync</h1>
+      </div>
+      <form className="admin-form" onSubmit={handleFormSubmit}>
+        <h1>Admin Signup</h1>
 
-          <label htmlFor="dp">Profile Picture</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleProfilePictureChange}
-            required
-          />
+        <label htmlFor="dp">Profile Picture</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleProfilePictureChange}
+          required
+        />
 
-          <label htmlFor="first-name">First Name</label>
-          <input
-            type="text"
-            value={formData.firstName}
-            onChange={(e) =>
-              setFormData({ ...formData, firstName: e.target.value })
-            }
-            required
-          />
+        <label htmlFor="first-name">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleInputChange}
+          required
+        />
 
-          <label htmlFor="last-name">Last Name</label>
-          <input
-            type="text"
-            value={formData.lastName}
-            onChange={(e) =>
-              setFormData({ ...formData, lastName: e.target.value })
-            }
-            required
-          />
+        <label htmlFor="last-name">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleInputChange}
+          required
+        />
 
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-            required
-          />
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+        />
 
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="text"
-            value={formData.phone}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
-          />
+        <label htmlFor="phone">Phone</label>
+        <input
+          type="text"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+        />
 
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-            required
-          />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
+          required
+        />
 
-          <label htmlFor="confirm">Confirm Password</label>
-          <input
-            type="password"
-            value={formData.confirm}
-            onChange={(e) =>
-              setFormData({ ...formData, confirm: e.target.value })
-            }
-            required
-          />
-          <input type="submit" value="Signup" />
+        <label htmlFor="confirm">Confirm Password</label>
+        <input
+          type="password"
+          name="confirm"
+          value={formData.confirm}
+          onChange={handleInputChange}
+          required
+        />
+        <input type="submit" value="Signup" />
+        <div className="flex flex-row">
           <Link to="/admin/login">
             <h3>Login here...</h3>
           </Link>
-        </form>
-
-        <Link to="/student/signup">
-          <button className="student-switch">Switch to Student</button>
-        </Link>
-      </div>
+          <Link to="/student/signup">
+            <button className="student-switch">Switch to Student</button>
+          </Link>
+        </div>
+      </form>
     </div>
   );
 };

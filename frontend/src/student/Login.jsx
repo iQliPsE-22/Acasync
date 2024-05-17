@@ -1,33 +1,36 @@
 import React from "react";
-import "./Login.css";
+import "../admin/Admin.css";
 import { Link, useNavigate } from "react-router-dom";
+
 const Login = () => {
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    naviagate("/student/dashboard");
+    navigate("/student/dashboard");
   };
+
   return (
-    <div>
-      <div className="stud-login">
-        <div className="back-stud w-screen">
-          <h1>Acasync</h1>
-        </div>
-        <form className="stud-form" onSubmit={handleFormSubmit}>
-          <h1 className="text-2xl">Student Login</h1>
-          <label htmlFor="user">User ID</label>
-          <input type="number" />
-          <label htmlFor="pass">Password</label>
-          <input type="text" />
-          <input type="submit" />
-          <Link to="/student/signup">
-            <h3>Not Registered ?</h3>
-          </Link>
-        </form>
-        <Link to="/admin/login">
-          <button className="admin-switch">Switch to Admin</button>
-        </Link>
+    <div className="admin-login">
+      <div className="back">
+        <h1 id="student-back">Acasync</h1>
       </div>
+      <form className="admin-form" onSubmit={handleFormSubmit}>
+        <h1 className="text-2xl">Student Login</h1>
+        <label htmlFor="user">User ID</label>
+        <input type="number" id="user" />
+        <label htmlFor="pass">Password</label>
+        <input type="password" id="pass" />
+        <input type="submit" />
+        <div className="flex flex-row">
+          <Link to="/student/signup">
+            <h3>Not Registered?</h3>
+          </Link>
+          <Link to="/admin/login">
+            <button className="admin-switch">Switch to Admin</button>
+          </Link>
+        </div>
+      </form>
     </div>
   );
 };
