@@ -159,6 +159,11 @@ server.get("/list", async (req, res) => {
   }
 });
 
+server.get("/", (req, res) => {
+  res.send("Server started and database is connected");
+});
+
+
 server.listen(8080, () => {
   console.log("Server started on port 8080");
 });
