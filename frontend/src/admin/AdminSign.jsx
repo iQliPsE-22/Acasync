@@ -17,7 +17,7 @@ const AdminSign = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    navigate("/admin-login");
+    navigate("/admin/login");
 
     try {
       console.log("SuccessFull");
@@ -30,7 +30,7 @@ const AdminSign = () => {
       formDataToSubmit.append("password", formData.password);
       formDataToSubmit.append("confirm", formData.confirm);
 
-      const response = await fetch("http://localhost:3000/admin", {
+      const response = await fetch("https://backend-acasync.vercel.app/admin", {
         method: "POST",
         body: formDataToSubmit,
       });

@@ -20,6 +20,7 @@
   background-position: center;
   -webkit-background-clip: text;
   color: transparent;
+  height: 100%;
   font-family: fantasy;
 }
 
@@ -29,7 +30,7 @@
 }
 #admin-back {
   background-image: url("../Assests/moon-2048727.jpg");
-  box-shadow: 10px 100px 20px black;
+  box-shadow: 5px 100px 20px black;
 }
 .admin-form {
   opacity: 0.9;
@@ -61,7 +62,8 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="date"] {
+input[type="date"],
+input[type="number"] {
   padding: 10px;
   border-radius: 5px;
   border: none;
