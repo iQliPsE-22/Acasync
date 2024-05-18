@@ -1,18 +1,21 @@
-import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
-
+import { useUser } from "./userContext.js";
 const Admin = () => {
+  const { userData, setUserData } = useUser();
   const navigate = useNavigate();
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    const user = document.getElementById("admin-user").value;
+    const pass = document.getElementById("pass").value;
+
+    if (user === "" || pass === "") {
+      alert("Please fill all the fields");
+      return;
+    }
+
     try {
-      const user = document.getElementById("admin-user").value;
-      const pass = document.getElementById("pass").value;
-      if (user === "" || pass === "") {
-        alert("Please fill all the fields");
-        return;
-      }
       const response = await fetch(
         "https://backend-acasync.vercel.app/admin-login",
         {
@@ -23,19 +26,28 @@ const Admin = () => {
           body: JSON.stringify({ email: user, password: pass }),
         }
       );
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
       const data = await response.json();
-      console.log(data);
+      console.log(data.admin);
       if (data.message === "Admin not found") {
         alert("Admin not found");
-        return;
+      } else if (data.message === "Invalid credentials") {
+        alert("Invalid credentials");
       } else {
+        setUserData(data.admin);
         console.log("Admin logged in successfully");
         navigate("/admin/dashboard");
       }
     } catch (err) {
-      console.log(err);
+      console.error("Error logging in:", err);
+      alert("An error occurred. Please try again.");
     }
   };
+
   return (
     <div className="admin-login">
       <div className="back">

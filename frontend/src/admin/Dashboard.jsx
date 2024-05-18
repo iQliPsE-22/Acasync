@@ -4,15 +4,16 @@ import { imagefrombuffer } from "imagefrombuffer";
 import Navbar from "./Navbar";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
-
+import { useUser } from "./userContext.js";
 const Dash = () => {
   const [adminData, setAdminData] = useState([]);
+  const { userData } = useUser();
   const [list, setList] = useState([]);
   const [studData, setStudData] = useState([]);
 
   useEffect(() => {
     fetchList();
-    fetchAdminData();
+    setAdminData(userData);
     fetchStudData();
   }, []);
 
@@ -26,20 +27,9 @@ const Dash = () => {
     }
   };
 
-  const fetchAdminData = async () => {
-    try {
-      const response = await fetch("https://backend-acasync.vercel.app/admin");
-      const data = await response.json();
-      setAdminData(data);
-    } catch (error) {
-      console.error("Error fetching admin data:", error);
-    }
-  };
   const fetchStudData = async () => {
     try {
-      const response = await fetch(
-        "https:/backend-acasync.vercel.app/student"
-      );
+      const response = await fetch("https:/backend-acasync.vercel.app/student");
       const data = await response.json();
       setStudData(data);
     } catch (error) {
@@ -52,7 +42,7 @@ const Dash = () => {
     if (student.gender === "male") male++;
     else female++;
   });
-  const userData = {
+  const StudentProgress = {
     labels: list.map((data) => data.name),
     datasets: [
       {
@@ -92,28 +82,25 @@ const Dash = () => {
         <div className="hero-class">
           <section className="hero">
             <div className="AdminContainer">
-              {adminData.map((item, index) => (
-                <div className="AdminCard" key={index}>
-                  {item.profilePicture && item.profilePicture.contentType && (
-                    <div className="adminpic">
-                      <img
-                        id="pic"
-                        src={imagefrombuffer({
-                          type: item.profilePicture?.contentType,
-                          data: item.profilePicture?.data?.data,
-                        })}
-                        alt="Profile"
-                      />
-                    </div>
-                  )}
-                  <div className="AdminInfo">
-                    <span style={{ textAlign: "center" }}></span>
-                    <h3>{`${item.firstName} ${item.lastName}`}</h3>
-                    <p>{`${item.email}`}</p>
-                    <p>{`+91${item.phone}`}</p>
-                  </div>
+              <div className="AdminCard">
+                <div className="adminpic">
+                  <img
+                    id="pic"
+                    src={imagefrombuffer({
+                      type: adminData.profilePicture?.contentType,
+                      data: adminData.profilePicture?.data?.data,
+                    })}
+                    alt="Profile"
+                  />
                 </div>
-              ))}
+
+                <div className="AdminInfo">
+                  <span style={{ textAlign: "center" }}></span>
+                  <h3>{`${adminData.firstName} ${adminData.lastName}`}</h3>
+                  <p>{`${adminData.email}`}</p>
+                  <p>{`+91${adminData.phone}`}</p>
+                </div>
+              </div>
               <div className="Schedule">
                 <h2>
                   {day}/{month}/{year}
@@ -153,7 +140,7 @@ const Dash = () => {
             </div>
           </section>
           <section className="hero">
-            <LineChart chartData={userData} />
+            <LineChart chartData={StudentProgress} />
             <PieChart chartData={stud} />
           </section>
         </div>
