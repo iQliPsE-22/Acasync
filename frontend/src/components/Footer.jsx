@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="footer w-screen bg-white ">
       <div className="footer-content flex justify-between items-center min-h-fit p-8">
-        <div>Email: abc@gmail.com</div>
+        <div>Email: iqlipse22@gmail.com</div>
         <div>Phone: +917668519318</div>
         <div>
           <a href="https://www.instagram.com/iqlipse_22">
