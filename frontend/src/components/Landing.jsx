@@ -18,14 +18,15 @@ const Landing = () => {
             Let's Begin your Wizarding journey with Acasync
           </h2>
           <div
-            className=" arrow h-24 w-24 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:bg-gray-400"
+            className="arrow h-24 w-24 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:bg-gray-400"
             onClick={handleExploreClick}
           >
-            <img src={arrowDown} alt="scroll down" width="50" height="50" />
+            <img src={arrowDown}
+            alt="scroll down" width="50" height="50" />
           </div>
         </div>
       </div>
-      <div className="landing" id="bottom">
+      <div className="landing text-center" id="bottom">
         <h1>Let's Ride in Acasync</h1>
       </div>
       <div className="portal ">
