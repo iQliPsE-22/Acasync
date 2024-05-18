@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const fetchStudData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/student");
+      const response = await fetch("https:/backend-acasync.vercel.app/student");
       const data = await response.json();
       setStudData(data);
     } catch (error) {

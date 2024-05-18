@@ -8,7 +8,7 @@ const Attendance = () => {
   });
   const fetchList = async () => {
     try {
-      const response = await fetch("http://localhost:3000/list");
+      const response = await fetch("https://backend-acasync.vercel.app/list");
       const data = await response.json();
       setList(data);
     } catch (error) {

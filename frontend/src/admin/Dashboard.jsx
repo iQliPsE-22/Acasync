@@ -18,7 +18,7 @@ const Dash = () => {
 
   const fetchList = async () => {
     try {
-      const response = await fetch("http://localhost:3000/list");
+      const response = await fetch("https://backend-acasync.vercel.app/list");
       const data = await response.json();
       setList(data);
     } catch (error) {
@@ -28,7 +28,7 @@ const Dash = () => {
 
   const fetchAdminData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/admin");
+      const response = await fetch("https://backend-acasync.vercel.app/admin");
       const data = await response.json();
       setAdminData(data);
     } catch (error) {
@@ -37,7 +37,9 @@ const Dash = () => {
   };
   const fetchStudData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/student");
+      const response = await fetch(
+        "https://backend-acasync.vercel.app/student"
+      );
       const data = await response.json();
       setStudData(data);
     } catch (error) {
