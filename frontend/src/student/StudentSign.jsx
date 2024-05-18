@@ -37,10 +37,13 @@ const StudentSign = () => {
       formDataToSubmit.append("stream", formData.stream);
       formDataToSubmit.append("semester", formData.semester);
 
-      const response = await fetch("http://localhost:3000/student", {
-        method: "POST",
-        body: formDataToSubmit,
-      });
+      const response = await fetch(
+        "https://backend-acasync.vercel.app/student",
+        {
+          method: "POST",
+          body: formDataToSubmit,
+        }
+      );
       const data = await response.json();
       console.log(data);
 

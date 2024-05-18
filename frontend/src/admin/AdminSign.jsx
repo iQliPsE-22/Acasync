@@ -17,8 +17,6 @@ const AdminSign = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    navigate("/admin/login");
-
     try {
       console.log("SuccessFull");
       const formDataToSubmit = new FormData();
@@ -46,6 +44,7 @@ const AdminSign = () => {
         password: "",
         confirm: "",
       });
+      navigate("/admin/login");
     } catch (error) {
       console.error("Error submitting admin data:", error);
     }
