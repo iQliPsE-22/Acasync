@@ -29,10 +29,13 @@ const Announcement = () => {
 
     console.log("sending to backend", formData);
 
-    const response = await fetch("http://localhost:3000/announcement", {
-      method: "POST",
-      body: formDataToSubmit,
-    });
+    const response = await fetch(
+      "https://backend-acasync.vercel.app/announcement",
+      {
+        method: "POST",
+        body: formDataToSubmit,
+      }
+    );
 
     const data = await response.json();
     console.log(data);
@@ -44,7 +47,9 @@ const Announcement = () => {
     });
   };
   const handleFetchAnnouncement = async () => {
-    const response = await fetch("http://localhost:3000/announcement");
+    const response = await fetch(
+      "https://backend-acasync.vercel.app/announcement"
+    );
     const data = await response.json();
     console.log(data);
     setFetchData(data);
