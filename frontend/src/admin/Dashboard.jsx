@@ -29,7 +29,9 @@ const Dash = () => {
 
   const fetchStudData = async () => {
     try {
-      const response = await fetch("https://backend-acasync.vercel.app/student");
+      const response = await fetch(
+        "https://backend-acasync.vercel.app/student"
+      );
       const data = await response.json();
       console.log(data);
       setStudData(data);
