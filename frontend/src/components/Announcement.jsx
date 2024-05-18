@@ -30,7 +30,7 @@ const Announcement = () => {
     console.log("sending to backend", formData);
 
     const response = await fetch(
-      "https://backend-acasync.vercel.app/announcement",
+      "https:/backend-acasync.vercel.app/announcement",
       {
         method: "POST",
         body: formDataToSubmit,
