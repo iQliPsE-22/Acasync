@@ -7,7 +7,33 @@ const Login = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    navigate("/student/dashboard");
+    try {
+      const user = document.getElementById("user").value;
+      const pass = document.getElementById("pass").value;
+      if (user === "" || pass === "") {
+        alert("Please fill all the fields");
+        return;
+      }
+      const res = await fetch(
+        "https://backend-acasync.vercel.app/student-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ roll: user, password: pass }),
+        }
+      );
+      const data = await res.json();
+      if (data.message === "Student not found") {
+        alert("Student not found");
+        return;
+      }
+      console.log("Student logged in successfully");
+      navigate("/student/dashboard");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

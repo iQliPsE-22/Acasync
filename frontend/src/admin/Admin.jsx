@@ -4,24 +4,38 @@ import "./Admin.css";
 
 const Admin = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    userId: "",
-    password: "",
-  });
-
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    navigate("/admin/dashboard");
+    try {
+      const user = document.getElementById("admin-user").value;
+      const pass = document.getElementById("pass").value;
+      if (user === "" || pass === "") {
+        alert("Please fill all the fields");
+        return;
+      }
+      const response = await fetch(
+        "https://backend-acasync.vercel.app/admin-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: user, password: pass }),
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data.message === "Admin not found") {
+        alert("Admin not found");
+        return;
+      } else {
+        console.log("Admin logged in successfully");
+        navigate("/admin/dashboard");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
   return (
     <div className="admin-login">
       <div className="back">
@@ -32,21 +46,9 @@ const Admin = () => {
           <h1 className="text-2xl">Admin Login</h1>
         </label>
         <label htmlFor="admin-user">User ID</label>
-        <input
-          type="text"
-          id="admin-user"
-          name="userId"
-          value={formData.userId}
-          onChange={handleInputChange}
-        />
+        <input type="text" id="admin-user" name="userId" />
         <label htmlFor="pass">Password</label>
-        <input
-          type="password"
-          id="pass"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-        />
+        <input type="password" id="pass" name="password" />
         <input type="submit" value="Login" />
         <div className="flex flex-row justify-around">
           <Link to="/admin/signup">
