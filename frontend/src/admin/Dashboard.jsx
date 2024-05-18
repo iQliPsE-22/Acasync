@@ -31,6 +31,7 @@ const Dash = () => {
     try {
       const response = await fetch("https:/backend-acasync.vercel.app/student");
       const data = await response.json();
+      console.log(data);
       setStudData(data);
     } catch (error) {
       console.error("Error fetching Student data:", error);
