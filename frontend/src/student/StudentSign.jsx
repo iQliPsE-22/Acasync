@@ -75,7 +75,7 @@ const StudentSign = () => {
       <div className="back">
         <h1 id="student-back">Acasync</h1>
       </div>
-      <form className="admin-form" onSubmit={handleFormSubmit}>
+      <form className="admin-form" id="stud-form" onSubmit={handleFormSubmit}>
         <h2>Student Signup</h2>
 
         <label htmlFor="dp">Profile Picture</label>

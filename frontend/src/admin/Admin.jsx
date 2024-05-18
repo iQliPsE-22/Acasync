@@ -25,9 +25,9 @@ const Admin = () => {
   return (
     <div className="admin-login">
       <div className="back">
-        <h1 id = "admin-back">Acasync</h1>
+        <h1 id="admin-back">Acasync</h1>
       </div>
-      <form className="admin-form" onSubmit={handleFormSubmit}>
+      <form className="admin-form" id="admin-form" onSubmit={handleFormSubmit}>
         <label htmlFor="login">
           <h1 className="text-2xl">Admin Login</h1>
         </label>
@@ -48,7 +48,7 @@ const Admin = () => {
           onChange={handleInputChange}
         />
         <input type="submit" value="Login" />
-        <div className = "flex flex-row">
+        <div className="flex flex-row justify-around">
           <Link to="/admin/signup">
             <h3>Not Registered?</h3>
           </Link>

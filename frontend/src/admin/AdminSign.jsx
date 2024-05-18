@@ -70,9 +70,9 @@ const AdminSign = () => {
   return (
     <div className="admin-login">
       <div className="back">
-        <h1 id = "admin-back">Acasync</h1>
+        <h1 id="admin-back">Acasync</h1>
       </div>
-      <form className="admin-form" onSubmit={handleFormSubmit}>
+      <form className="admin-form" id="admin-form" onSubmit={handleFormSubmit}>
         <h1>Admin Signup</h1>
 
         <label htmlFor="dp">Profile Picture</label>
@@ -136,7 +136,7 @@ const AdminSign = () => {
           required
         />
         <input type="submit" value="Signup" />
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-around">
           <Link to="/admin/login">
             <h3>Login here...</h3>
           </Link>
