@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
-import { useUser } from "./userContext.js";
+import { useUser } from "./userContext.jsx";
 const Admin = () => {
   const { userData, setUserData } = useUser();
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "../admin/Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
 import Navbar from "../admin/Navbar";

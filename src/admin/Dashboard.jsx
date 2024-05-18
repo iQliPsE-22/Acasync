@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { imagefrombuffer } from "imagefrombuffer";
 import Navbar from "./Navbar";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
-import { useUser } from "./userContext.js";
+import { useUser } from "./userContext.jsx";
 const Dash = () => {
   const [adminData, setAdminData] = useState([]);
   const { userData } = useUser();

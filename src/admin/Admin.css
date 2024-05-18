@@ -25,11 +25,11 @@
 }
 
 #student-back {
-  background-image: url("../Assests/trees-6207925.jpg");
+  background-image: url("../assets/trees-6207925.jpg");
   box-shadow: 10px 100px 20px #2b5e6f;
 }
 #admin-back {
-  background-image: url("../Assests/moon-2048727.jpg");
+  background-image: url("../assets/moon-2048727.jpg");
   box-shadow: 5px 100px 20px black;
 }
 .admin-form {

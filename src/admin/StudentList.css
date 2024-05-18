@@ -14,13 +14,12 @@
 }
 
 .student-list-container {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   text-align: center;
   background-color: var(--secondary-bg-color);
   padding: 20px;
   min-height: 100vh;
 }
-
 
 .student-list-header {
   color: var(--header-color);
@@ -54,10 +53,12 @@ tbody tr:nth-child(odd) {
 }
 
 .student-form {
-  margin: 20px 0;
+  /* margin: 20px 0; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  justify-content: center;
+  gap:50px;
 }
 
 .student-form input[type="text"],

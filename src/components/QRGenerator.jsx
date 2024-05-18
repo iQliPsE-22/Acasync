@@ -6,7 +6,7 @@ const QRCodeGenerator = () => {
 
   const [text, setText] = useState(`GOT your attendance for ${today}.`);
   return (
-    <div className="ml-auto mr-auto">
+    <div className="flex justify-center p-4">
       {text && <QRCode value={text} />}
     </div>
   );

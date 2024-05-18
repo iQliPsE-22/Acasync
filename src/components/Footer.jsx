@@ -1,9 +1,8 @@
-import React from "react";
 import "../App.css";
 import "./footer.css"; // Import your custom CSS file for the footer
-import insta from "../Assests/insta.png";
-import githubImage from "../Assests/github.png";
-import linkedinImage from "../Assests/linkedin.png";
+import insta from "../assets/insta.png";
+import githubImage from "../assets/github.png";
+import linkedinImage from "../assets/linkedin.png";
 const Footer = () => {
   return (
     <footer className="footer w-screen bg-white ">

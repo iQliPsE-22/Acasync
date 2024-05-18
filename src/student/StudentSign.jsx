@@ -17,11 +17,11 @@ const StudentSign = () => {
     stream: "",
     semester: "",
     roll: "",
+    password: "",
   });
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    navigate("/student-login");
 
     try {
       const formDataToSubmit = new FormData();
@@ -36,6 +36,7 @@ const StudentSign = () => {
       formDataToSubmit.append("course", formData.course);
       formDataToSubmit.append("stream", formData.stream);
       formDataToSubmit.append("semester", formData.semester);
+      formDataToSubmit.append("password", formData.password);
 
       const response = await fetch(
         "https://backend-acasync.vercel.app/student",
@@ -59,7 +60,9 @@ const StudentSign = () => {
         stream: "",
         semester: "",
         roll: "",
+        password: "",
       });
+      navigate("/student/login");
     } catch (error) {
       console.error("Error submitting Student data:", error);
     }
@@ -183,6 +186,18 @@ const StudentSign = () => {
           required
         />
 
+        <label htmlFor="pass">Password</label>
+        <input
+          type="password"
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+          required
+        />
+        <label htmlFor="pass">Confirm Password</label>
+        <input type="password" required />
+        <br />
         <input type="submit" value="Submit" />
         <div className="flex flex-row justify-around">
           <Link to="/student/login">

@@ -150,7 +150,7 @@ const StudentList = () => {
           ))}
         </tbody>
       </table>
-      <div>
+      <div className="bg-[#977af6] p-2 mt-2 rounded">
         <form onSubmit={handleFormList} className="student-form">
           <input
             type="text"

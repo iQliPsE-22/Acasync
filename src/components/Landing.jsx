@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import INS from "../Assests/taxi-122.gif";
-import STUD from "../Assests/3d-casual-life-student-girl-with-magnifying-glass.png";
+import INS from "../assets/taxi-122.gif";
+import STUD from "../assets/3d-casual-life-student-girl-with-magnifying-glass.png";
 import "./Landing.css";
 import "../App.css";
-import arrowDown from "../Assests/icons8-arrow-64.png";
+import arrowDown from "../assets/icons8-arrow-64.png";
 const Landing = () => {
   function handleExploreClick() {
     const homeContainer = document.getElementById("bottom");
@@ -21,8 +20,7 @@ const Landing = () => {
             className="arrow h-24 w-24 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:bg-gray-400"
             onClick={handleExploreClick}
           >
-            <img src={arrowDown}
-            alt="scroll down" width="50" height="50" />
+            <img src={arrowDown} alt="scroll down" width="50" height="50" />
           </div>
         </div>
       </div>
