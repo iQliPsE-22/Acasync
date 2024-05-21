@@ -30,7 +30,7 @@
 }
 #admin-back {
   background-image: url("../assets/moon-2048727.jpg");
-  box-shadow: 5px 100px 20px black;
+  box-shadow: 5px 100px 20px 50px black;
 }
 .admin-form {
   opacity: 0.9;
@@ -53,7 +53,7 @@ form#stud-form {
   background-color: #2b5e6f;
 }
 form#admin-form {
-  background-color: black;
+  background-color: #101010;
 }
 label {
   font-weight: light;
@@ -77,7 +77,7 @@ input[type="radio"] {
 
 input[type="submit"] {
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
