@@ -137,7 +137,7 @@ const AdminSign = () => {
         <input type="submit" value="Signup" />
         <div className="flex flex-row justify-around">
           <Link to="/admin/login">
-            <h3>Login here...</h3>
+          <button className="student-switch">Login</button>
           </Link>
           <Link to="/student/signup">
             <button className="student-switch">Switch to Student</button>

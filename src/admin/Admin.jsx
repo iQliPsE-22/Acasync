@@ -64,7 +64,7 @@ const Admin = () => {
         <input type="submit" value="Login" />
         <div className="flex flex-row justify-around">
           <Link to="/admin/signup">
-            <h3>Not Registered?</h3>
+          <button className = "student-switch">Not Registered?</button>
           </Link>
           <Link to="/student/login">
             <button className="student-switch">Switch to Student</button>
