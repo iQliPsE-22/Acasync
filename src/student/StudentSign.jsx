@@ -81,7 +81,7 @@ const StudentSign = () => {
         <h1 id="student-back">Acasync</h1>
       </div>
       <form className="admin-form" id="stud-form" onSubmit={handleFormSubmit}>
-        <h2>Student Signup</h2>
+        <h1 className="text-2xl text-center">Student Signup</h1>
         {!next && (
           <div className="flex flex-col gap-2">
             <label htmlFor="dp">Profile Picture</label>

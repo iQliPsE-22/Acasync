@@ -55,7 +55,7 @@ const Admin = () => {
       </div>
       <form className="admin-form" id="admin-form" onSubmit={handleFormSubmit}>
         <label htmlFor="login">
-          <h1 className="text-2xl">Admin Login</h1>
+          <h1 className="text-2xl text-center">Admin Login</h1>
         </label>
         <label htmlFor="admin-user">User ID</label>
         <input type="text" id="admin-user" name="userId" />
@@ -64,7 +64,7 @@ const Admin = () => {
         <input type="submit" value="Login" />
         <div className="flex flex-row justify-around">
           <Link to="/admin/signup">
-          <button className = "student-switch">Not Registered?</button>
+            <button className="student-switch">Not Registered?</button>
           </Link>
           <Link to="/student/login">
             <button className="student-switch">Switch to Student</button>

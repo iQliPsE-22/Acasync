@@ -28,6 +28,7 @@
   background-image: url("../assets/trees-6207925.jpg");
   box-shadow: 10px 100px 20px #2b5e6f;
 }
+
 #admin-back {
   background-image: url("../assets/moon-2048727.jpg");
   box-shadow: 5px 100px 20px 50px black;
@@ -73,6 +74,7 @@ input[type="number"] {
 input[type="radio"] {
   margin: 10px;
   width: 30%;
+  height: 15px
 }
 
 input[type="submit"] {

@@ -72,7 +72,7 @@ const AdminSign = () => {
         <h1 id="admin-back">Acasync</h1>
       </div>
       <form className="admin-form" id="admin-form" onSubmit={handleFormSubmit}>
-        <h1>Admin Signup</h1>
+        <h1 className="text-2xl text-center">Admin Signup</h1>
 
         <label htmlFor="dp">Profile Picture</label>
         <input
@@ -137,7 +137,7 @@ const AdminSign = () => {
         <input type="submit" value="Signup" />
         <div className="flex flex-row justify-around">
           <Link to="/admin/login">
-          <button className="student-switch">Login</button>
+            <button className="student-switch">Login</button>
           </Link>
           <Link to="/student/signup">
             <button className="student-switch">Switch to Student</button>

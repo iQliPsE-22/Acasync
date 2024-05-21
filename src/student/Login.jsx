@@ -42,7 +42,7 @@ const Login = () => {
         <h1 id="student-back">Acasync</h1>
       </div>
       <form className="admin-form" id="stud-form" onSubmit={handleFormSubmit}>
-        <h1 className="text-2xl">Student Login</h1>
+        <h1 className="text-2xl text-center">Student Login</h1>
         <label htmlFor="user">User ID</label>
         <input type="number" id="user" />
         <label htmlFor="pass">Password</label>
@@ -50,7 +50,7 @@ const Login = () => {
         <input type="submit" />
         <div className="flex flex-row justify-around">
           <Link to="/student/signup">
-            <button className = "student-switch">Not Registered?</button>
+            <button className="student-switch">Not Registered?</button>
           </Link>
           <Link to="/admin/login">
             <button className="student-switch">Switch to Admin</button>
