@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./StudentList.css";
 import DailyAttendance from "./DailyAttendance";
 const Attendance = () => {

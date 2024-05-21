@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
 
@@ -78,6 +78,12 @@ const AdminSign = () => {
         <input
           type="file"
           accept="image/*"
+          className="block text-sm text-slate-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-full file:border-0
+              file:text-lg file:font-semibold
+              file:bg-violet-50 file:text-violet-700
+              hover:file:bg-violet-100"
           onChange={handleProfilePictureChange}
           required
         />

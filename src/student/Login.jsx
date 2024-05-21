@@ -1,4 +1,3 @@
-import React from "react";
 import "../admin/Admin.css";
 import { Link, useNavigate } from "react-router-dom";
 
