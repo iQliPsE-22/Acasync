@@ -82,14 +82,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: red !important;
   }
   .portal button {
-    width: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
   }
   .portal button img {
     width: 60%;
