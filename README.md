@@ -1,8 +1,16 @@
-# React + Vite
+<h1>Acasync</h1>
+<br>
+<h3>The ultimate school and college management system</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Visit The Acasync : <a href = "https://acasync.vercel.app/">Link here</a></h3>
 
-Currently, two official plugins are available:
+<h4>Follow these steps to start with the project</h4>
+<ul>
+    <li>git clone https://github.com/iQliPsE-22/Acasync.git</li>
+    <li>npm install</li>
+    <li>npm run dev</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/iQliPsE-22/Acasync/assets/91374730/f4945310-afc5-4d2e-9f81-d04889a80054)
+
+![image](https://github.com/iQliPsE-22/Acasync/assets/91374730/c92aa63a-a752-4eca-a444-7c7f751b9ed3)
