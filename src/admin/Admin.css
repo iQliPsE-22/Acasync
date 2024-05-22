@@ -104,11 +104,22 @@ button.student-switch {
 }
 /* Media Queries */
 @media screen and (max-width: 768px) {
+  .admin-login{
+    height: 100vh;
+    align-items: flex-start;
+  }
   form.login-form {
     max-width: 100%;
   }
   .student-switch {
     width: 100%;
     margin-top: 10px;
+  }
+  .back h1 {
+    font-size: 7rem;
+  }
+  form.admin-form {
+    width: 90%;
+    left: 5%;
   }
 }
