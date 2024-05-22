@@ -109,11 +109,18 @@ button.student-switch {
     align-items: flex-start;
   }
   .back h1 {
-    font-size: 7rem;
+    font-size: 6rem;
   }
   form.admin-form {
     width: 90%;
     left: 5%;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"] {
+    padding: 5px;
   }
   .student-switch {
     width: 100%;

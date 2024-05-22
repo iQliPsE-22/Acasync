@@ -62,7 +62,7 @@ const Admin = () => {
         <label htmlFor="pass">Password</label>
         <input type="password" id="pass" name="password" />
         <input type="submit" value="Login" />
-        <div className="flex flex-row justify-around">
+        <div className="flex flex-row justify-center items-center w-full gap-2">
           <Link to="/admin/signup">
             <button className="student-switch">Not Registered?</button>
           </Link>

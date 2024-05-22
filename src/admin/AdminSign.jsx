@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
 
@@ -145,7 +145,7 @@ const AdminSign = () => {
             required
           />
           <input type="submit" value="Signup" />
-          <div className="flex flex-row justify-around">
+          <div className="flex flex-row justify-center items-center w-full gap-2">
             <Link to="/admin/login">
               <button className="student-switch">Login</button>
             </Link>

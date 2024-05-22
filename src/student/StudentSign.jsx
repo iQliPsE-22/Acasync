@@ -234,7 +234,7 @@ const StudentSign = () => {
               <input type="submit" value="Submit" />
             </div>
           )}
-          <div className="flex flex-row justify-around">
+          <div className="flex flex-row justify-center items-center w-full gap-2">
             <Link to="/student/login">
               <button className="student-switch">Login</button>
             </Link>
