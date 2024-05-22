@@ -145,7 +145,7 @@ const AdminSign = () => {
             required
           />
           <input type="submit" value="Signup" />
-          <div className="flex flex-row justify-center items-center w-full gap-2">
+          <div className="flex flex-row justify-between items-center w-full gap-2 mt-4">
             <Link to="/admin/login">
               <button className="student-switch">Login</button>
             </Link>

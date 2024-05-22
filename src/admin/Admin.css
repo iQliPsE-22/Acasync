@@ -40,11 +40,11 @@
 }
 
 form.admin-form {
-  min-height: fit-content;
+  min-height: max-content;
   width: 32%;
   padding: 40px;
   position: absolute;
-  top: 25%;
+  top: 23%;
   left: 33%;
   border-radius: 5px;
   display: flex;
