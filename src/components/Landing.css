@@ -89,7 +89,7 @@
     justify-content: center;
   }
   .portal button img {
-    width: 60%;
+    /* width: 60%; */
     filter: drop-shadow(0 0 0.75rem #000000);
   }
 }
