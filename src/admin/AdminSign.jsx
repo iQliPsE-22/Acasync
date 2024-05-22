@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
 
@@ -71,85 +71,90 @@ const AdminSign = () => {
       <div className="back">
         <h1 id="admin-back">Acasync</h1>
       </div>
-      <form className="admin-form" id="admin-form" onSubmit={handleFormSubmit}>
-        <h1 className="text-2xl text-center">Admin Signup</h1>
-
-        <label htmlFor="dp">Profile Picture</label>
-        <input
-          type="file"
-          accept="image/*"
-          className="block text-sm text-slate-500
+      <div>
+        <form
+          className="admin-form"
+          id="admin-form"
+          onSubmit={handleFormSubmit}
+        >
+          <h1 className="text-2xl text-center">Admin Signup</h1>
+          <label htmlFor="dp">Profile Picture</label>
+          <input
+            type="file"
+            accept="image/*"
+            className="block text-sm text-slate-500
               file:mr-4 file:py-2 file:px-4
               file:rounded-full file:border-0
               file:text-lg file:font-semibold
               file:bg-violet-50 file:text-violet-700
               hover:file:bg-violet-100"
-          onChange={handleProfilePictureChange}
-          required
-        />
+            onChange={handleProfilePictureChange}
+            required
+          />
 
-        <label htmlFor="first-name">First Name</label>
-        <input
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleInputChange}
-          required
-        />
+          <label htmlFor="first-name">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleInputChange}
+            required
+          />
 
-        <label htmlFor="last-name">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleInputChange}
-          required
-        />
+          <label htmlFor="last-name">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleInputChange}
+            required
+          />
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
 
-        <label htmlFor="phone">Phone</label>
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleInputChange}
-        />
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
 
-        <label htmlFor="confirm">Confirm Password</label>
-        <input
-          type="password"
-          name="confirm"
-          value={formData.confirm}
-          onChange={handleInputChange}
-          required
-        />
-        <input type="submit" value="Signup" />
-        <div className="flex flex-row justify-around">
-          <Link to="/admin/login">
-            <button className="student-switch">Login</button>
-          </Link>
-          <Link to="/student/signup">
-            <button className="student-switch">Switch to Student</button>
-          </Link>
-        </div>
-      </form>
+          <label htmlFor="confirm">Confirm Password</label>
+          <input
+            type="password"
+            name="confirm"
+            value={formData.confirm}
+            onChange={handleInputChange}
+            required
+          />
+          <input type="submit" value="Signup" />
+          <div className="flex flex-row justify-around">
+            <Link to="/admin/login">
+              <button className="student-switch">Login</button>
+            </Link>
+            <Link to="/student/signup">
+              <button className="student-switch">Switch to Student</button>
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

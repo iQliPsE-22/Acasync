@@ -5,16 +5,17 @@
   justify-content: center;
   align-items: center;
   min-height: 110vh;
+  height: 125vh;
 }
-
 .back {
-  font-size: 18rem;
+  font-size: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 20px;
+  z-index: 0;
 }
-
 .back h1 {
   background-size: cover;
   background-position: center;
@@ -26,28 +27,30 @@
 
 #student-back {
   background-image: url("../assets/trees-6207925.jpg");
-  box-shadow: 10px 100px 20px #2b5e6f;
+  filter: drop-shadow(0 4rem 2rem #2b5e6f);
 }
-
 #admin-back {
   background-image: url("../assets/moon-2048727.jpg");
-  box-shadow: 5px 100px 20px 50px black;
+  filter: drop-shadow(0 4rem 2rem #000000);
 }
 .admin-form {
   opacity: 0.9;
-  transition: 0.5s;
+  transition: 1s;
   color: white;
 }
 
 form.admin-form {
+  min-height: fit-content;
+  width: 32%;
   padding: 40px;
+  position: absolute;
+  top: 25%;
+  left: 33%;
   border-radius: 5px;
-  min-height: fit-content;
-  width: 90%;
-  min-height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 9px;
+  z-index: 1;
 }
 
 form#stud-form {
@@ -65,7 +68,7 @@ input[type="password"],
 input[type="email"],
 input[type="date"],
 input[type="number"] {
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
   background-color: #f1f1f1;
