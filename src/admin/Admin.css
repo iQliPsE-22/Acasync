@@ -109,11 +109,15 @@ button.student-switch {
     align-items: flex-start;
   }
   .back h1 {
-    font-size: 6rem;
+    font-size: 5.5rem;
+    font-weight: bolder;
+    letter-spacing: 5px;
   }
   form.admin-form {
     width: 90%;
+    /* height: 40%; */
     left: 5%;
+    padding: 20px;
   }
   input[type="text"],
   input[type="password"],
