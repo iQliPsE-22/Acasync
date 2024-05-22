@@ -1,5 +1,7 @@
-<a href = "https://acasync.vercel.app/"><h1>Acasync</h1></a>
-<br>
+<a href="https://acasync.vercel.app/">
+        <h1>Acasync</h1>
+</a>
+    <br>
 <h3>The ultimate school and college management system</h3>
 
 <h4>Follow these steps to start with the project</h4>
