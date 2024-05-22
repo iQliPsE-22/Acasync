@@ -1,5 +1,5 @@
 <h1>Acasync</h1><br>
-<h3>TThe ultimate school and college management system</h3>
+<h3>The ultimate school and college management system</h3>
 
 <h4>Follow these steps to start with the project</h4>
 <ul>
