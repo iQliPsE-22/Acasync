@@ -1,0 +1,138 @@
+.admin-login {
+    background-size: cover;
+    background-color: rgb(189, 185, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    height: 125vh;
+  }
+  .back {
+    font-size: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+    z-index: 0;
+  }
+  .back h1 {
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    color: transparent;
+    height: 100%;
+    font-family: fantasy;
+  }
+  
+  #student-back {
+    background-image: url("../assets/trees-6207925.jpg");
+    filter: drop-shadow(0 4rem 2rem #2b5e6f);
+  }
+  #admin-back {
+    background-image: url("../assets/moon-2048727.jpg");
+    filter: drop-shadow(0 4rem 2rem #000000);
+  }
+  .admin-form {
+    opacity: 0.9;
+    transition: 1s;
+    color: white;
+  }
+  
+  form.admin-form {
+    min-height: max-content;
+    width: 32%;
+    padding: 40px;
+    position: absolute;
+    top: 23%;
+    left: 33%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 1;
+  }
+  
+  form#stud-form {
+    background-color: #2b5e6f;
+  }
+  form#admin-form {
+    background-color: #101010;
+  }
+  label {
+    font-weight: light;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f1f1f1;
+    color: black;
+  }
+  input[type="radio"] {
+    margin: 10px;
+    width: 30%;
+    height: 15px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #006bdd;
+  }
+  button.student-switch {
+    height: 50px;
+    color: antiquewhite;
+    background-color: rgb(28, 31, 30);
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  /* Media Queries */
+  @media screen and (max-width: 600px) {
+    .admin-login {
+      height: 150vh;
+      /* background-size: cover; */
+      align-items: flex-start;
+  
+    }
+    .admin-form{
+      margin-top: 80px;
+    }
+    .back h1 {
+      font-size: 5.5rem;
+      font-weight: bolder;
+      letter-spacing: 5px;
+    }
+    form.admin-form {
+      width: 90%;
+      left: 5%;
+      padding: 20px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"] {
+      padding: 5px;
+    }
+    .student-switch {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

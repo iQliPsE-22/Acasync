@@ -34,8 +34,8 @@ function App() {
           {/* <Route path="/student/attendance" element={<StudentAttendance />} /> */}
           <Route path="/student/announcements" element={<Announcement />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

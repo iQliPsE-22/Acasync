@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Admin.css";
+import "./AdminSign.css";
 
 const AdminSign = () => {
   const navigate = useNavigate();
