@@ -95,3 +95,31 @@ th {
   display: flex;
   flex-direction: row;
 }
+@media  screen and (max-width: 600px){
+  .dashboard{
+    overflow: hidden;
+  }
+  .hero-class{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .AdminContainer{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: auto;
+    margin: auto;
+  }
+  /* .AdminCard{
+   margin: auto;
+   padding: auto;
+  } */
+  .line{
+   margin: 40px;
+  }
+}

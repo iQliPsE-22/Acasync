@@ -24,3 +24,10 @@
   color: black;
   background-color: #b58ffd;
 }
+@media screen and (max-width: 600px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}

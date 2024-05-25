@@ -97,3 +97,16 @@ tbody tr:nth-child(odd) {
   background-color: #ff0000;
   /* Maintain the specified hover color */
 }
+@media screen and (max-width: 600px) {
+  .student-form {
+    flex-direction: column;
+  }
+  #student-table td{
+    
+    font-size: 12px;
+    padding: 1px;
+  }
+  .student-list-table{
+    display: none;
+  }
+}
