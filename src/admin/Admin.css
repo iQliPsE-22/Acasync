@@ -103,10 +103,15 @@ button.student-switch {
   cursor: pointer;
 }
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .admin-login {
     height: 100vh;
+    
     align-items: flex-start;
+
+  }
+  .admin-form{
+    margin-top: 80px;
   }
   .back h1 {
     font-size: 5.5rem;
