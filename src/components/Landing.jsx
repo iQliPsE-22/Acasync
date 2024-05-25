@@ -27,20 +27,24 @@ const Landing = () => {
       <div className="landing text-center" id="bottom">
         <h1>Let's Ride in Acasync</h1>
       </div>
-      <div className="portal ">
+      <br />
+      <div className="portal">
         <div className="itim text-center text-2xl p-4 bg-white/30 backdrop-blur-md text-white mt-2 rounded">
           <h3>Choose your role</h3>
         </div>
-        <Link to="/admin/login">
+        <div className="flex">
+
+        <Link  to="/admin/login">
           <button>
             <img src={INS} alt="icon" />
           </button>
         </Link>
-        <Link to="/student/login">
+        <Link className="mt-7" to="/student/login">
           <button>
             <img src={STUD} alt="icon" />
           </button>
         </Link>
+        </div>
       </div>
     </div>
   );
