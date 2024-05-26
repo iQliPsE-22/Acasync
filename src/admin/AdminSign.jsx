@@ -34,7 +34,6 @@ const AdminSign = () => {
       });
       const data = await response.json();
       console.log(data);
-
       setFormData({
         profilePicture: null,
         firstName: "",

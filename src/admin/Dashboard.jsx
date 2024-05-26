@@ -96,7 +96,6 @@ const Dash = () => {
                     alt="Profile"
                   />
                 </div>
-
                 <div className="AdminInfo">
                   <span style={{ textAlign: "center" }}></span>
                   <h3>{`${adminData.firstName} ${adminData.lastName}`}</h3>

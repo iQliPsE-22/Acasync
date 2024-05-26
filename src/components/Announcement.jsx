@@ -48,7 +48,7 @@ const Announcement = () => {
   };
   const handleFetchAnnouncement = async () => {
     const response = await fetch(
-      "https:/backend-acasync.vercel.app/announcement"
+      "https://backend-acasync.vercel.app/announcement"
     );
     const data = await response.json();
     console.log(data);

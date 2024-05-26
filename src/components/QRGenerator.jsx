@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import QRCode from "qrcode.react";
 
 const QRCodeGenerator = () => {
-  const today = new Date();
-
-  const [text, setText] = useState(`GOT your attendance for ${today}.`);
+  const [url, setUrl] = useState("https://acasync.vercel.app/student/login"); // Replace with your actual domain
   return (
-    <div className="flex justify-center p-4">
-      {text && <QRCode value={text} />}
+    <div className="flex flex-col items-center p-4">
+      {url && <QRCode value={url} />}
+      <span className="mt-4">{url}</span>
     </div>
   );
 };
