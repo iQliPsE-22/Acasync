@@ -10,7 +10,10 @@
   font-family: "Ubuntu", sans-serif;
   backdrop-filter: blur(10px);
 }
-
+.land-container{
+  overflow: hidden;
+  background: #000;
+}
 #top button {
   background-color: #ffffff8f;
   font-family: "Oxygen", sans-serif;
@@ -73,15 +76,23 @@
   filter: drop-shadow(0 0 0.75rem #000000);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 600px) {
   .landing h1 {
     font-weight: 1000;
+  }
+  .landing{
+    padding: 20px;
+  }
+  .land-container{
+    overflow: hidden;
+    background: #000;
   }
   .portal {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height:auto;
   }
   .portal button {
     display: flex;
@@ -92,4 +103,10 @@
     /* width: 60%; */
     filter: drop-shadow(0 0 0.75rem #000000);
   }
+  .flex-container {
+    display: flex;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+  } 
 }

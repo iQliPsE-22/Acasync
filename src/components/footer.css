@@ -1,5 +1,6 @@
 footer{
   margin-top: 10px;
+
 }
 .footer-content a {
   margin: 0 10px;
@@ -29,6 +30,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
   }
 
