@@ -64,7 +64,7 @@ const StudentList = () => {
     console.log(enrollmentId);
     try {
       const response = await fetch(
-        `https:/backend-acasync.vercel.app/list/${enrollmentId}`,
+        `https://backend-acasync.vercel.app/list/${enrollmentId}`,
         {
           method: "DELETE",
           headers: {
