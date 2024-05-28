@@ -28,7 +28,7 @@ const Announcement = () => {
     formDataToSubmit.append("file", formData.file);
 
     try {
-      const response = await fetch("http://localhost:3000/announcement", {
+      const response = await fetch("https://backend-acasync.vercel.app/announcement", {
         method: "POST",
         body: formDataToSubmit,
       });
@@ -54,7 +54,7 @@ const Announcement = () => {
 
   const handleFetchAnnouncement = async () => {
     try {
-      const response = await fetch("http://localhost:3000/announcement");
+      const response = await fetch("https://backend-acasync.vercel.app/announcement");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
