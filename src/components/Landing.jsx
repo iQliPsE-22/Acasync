@@ -14,7 +14,7 @@ const Landing = () => {
       <div className="banner">
         <div id="top" className="flex flex-col items-center">
           <h2 className="itim text-3xl p-4 mb-4">
-            Let's Begin your Wizarding journey with Acasync
+            Let's Sync the academics with Acasync
           </h2>
           <div
             className="arrow h-24 w-24 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:bg-gray-400"
