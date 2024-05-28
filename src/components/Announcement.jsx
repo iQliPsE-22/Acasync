@@ -53,6 +53,9 @@ const Announcement = () => {
     const data = await response.json();
     console.log(data);
     setFetchData(data);
+
+
+    
   };
   useEffect(() => {
     handleFetchAnnouncement();
