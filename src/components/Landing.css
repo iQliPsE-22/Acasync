@@ -10,7 +10,7 @@
   font-family: "Ubuntu", sans-serif;
   backdrop-filter: blur(10px);
 }
-.land-container{
+.land-container {
   overflow: hidden;
   background: #000;
 }
@@ -42,7 +42,8 @@
 
 .banner {
   height: 150vh;
-  background-image: url("../assets/top.jpeg");
+  /* background-image: url("../assets/top.jpeg"); */
+  background-image: url("https://yasio.dev/assets/img/bg.87635d9.webp");
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
@@ -55,7 +56,7 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-image: url("../assets/bottom.jpeg");
+  background-image: url("https://yasio.dev/assets/img/bg.87635d9.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -80,10 +81,10 @@
   .landing h1 {
     font-weight: 1000;
   }
-  .landing{
+  .landing {
     padding: 20px;
   }
-  .land-container{
+  .land-container {
     overflow: hidden;
     background: #000;
   }
@@ -92,7 +93,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:auto;
+    height: auto;
   }
   .portal button {
     display: flex;
@@ -108,5 +109,5 @@
     /* flex-direction: column;
     align-items: center;
     justify-content: center; */
-  } 
+  }
 }

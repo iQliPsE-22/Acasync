@@ -20,6 +20,7 @@ const StudentSign = () => {
     password: "",
   });
   const [next, setNext] = useState(false);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -44,8 +45,13 @@ const StudentSign = () => {
           body: formDataToSubmit,
         }
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
       const data = await response.json();
-      console.log(data);
+      console.log("Server response:", data);
 
       setFormData({
         profilePicture: null,
@@ -61,9 +67,10 @@ const StudentSign = () => {
         roll: "",
         password: "",
       });
+
       navigate("/student/login");
     } catch (error) {
-      console.error("Error submitting Student data:", error);
+      console.error("Error submitting student data:", error);
     }
   };
 
@@ -92,11 +99,11 @@ const StudentSign = () => {
                 alt="dp"
                 onChange={handleProfilePictureChange}
                 className="block text-sm text-slate-500
-              file:mr-4 file:py-2 file:px-4
-              file:rounded-full file:border-0
-              file:text-lg file:font-semibold
-              file:bg-violet-50 file:text-violet-700
-              hover:file:bg-violet-100"
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-full file:border-0
+                  file:text-lg file:font-semibold
+                  file:bg-violet-50 file:text-violet-700
+                  hover:file:bg-violet-100"
                 required
               />
               <label htmlFor="user">First Name</label>
@@ -133,6 +140,7 @@ const StudentSign = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                required
               />
               <label htmlFor="dob">Date of Birth</label>
               <input
@@ -167,6 +175,7 @@ const StudentSign = () => {
                 />
               </div>
               <button
+                type="button"
                 onClick={() => setNext(true)}
                 className="bg-[#03242b] p-3 rounded"
               >
@@ -212,7 +221,6 @@ const StudentSign = () => {
                 }
                 required
               />
-
               <label htmlFor="pass">Password</label>
               <input
                 type="password"
@@ -226,6 +234,7 @@ const StudentSign = () => {
               <input type="password" required />
               <br />
               <button
+                type="button"
                 onClick={() => setNext(false)}
                 className="bg-[#03242b] p-3 rounded hover:bg-[#010E12]"
               >
